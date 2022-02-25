@@ -22,7 +22,7 @@
                             <select class='form-control' name='hari' required>
                                 <option value=''>Pilih Hari</option>";
                                 <?php foreach ($hari as $val) { ?>
-                                    <?php if ($siswa['tinggal'] == $val) { ?>
+                                    <?php if ($kartu['hari'] == $val) { ?>
                                         <option value='<?= $val ?>' selected><?= $val ?> </option>
                                     <?php  } else { ?>
                                         <option value='<?= $val ?>'><?= $val ?> </option>
@@ -80,18 +80,18 @@
                         </thead>
                         <tbody>
                             <?php
-                            $query = mysqli_query($koneksi, "select * from jurusan");
+                            $query = mysqli_query($koneksi, "select * from kartu");
                             $no = 0;
-                            while ($jurusan = mysqli_fetch_array($query)) {
+                            while ($kartu = mysqli_fetch_array($query)) {
                                 $no++;
                             ?>
                                 <tr>
                                     <td><?= $no; ?></td>
-                                    <td><?= $jurusan['id_jurusan'] ?></td>
-                                    <td><?= $jurusan['nama_jurusan'] ?></td>
-                                    <td><?= $jurusan['kuota'] ?></td>
-                                    <td><?= $jurusan['kuota'] ?></td>
-                                    <td><?= $jurusan['kuota'] ?></td>
+                                    <td><?= $kartu['hari'] ?></td>
+                                    <td><?= $kartu['tgl'] ?></td>
+                                    <td><?= $kartu['waktu_ujian_mulai'] ?></td>
+                                    <td><?= $kartu['waktu_ujian_selesai'] ?></td>
+                                    <td><?= $kartu['cbt'] ?></td>
                                 </tr>
                             <?php }
                             ?>
@@ -107,7 +107,7 @@
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'mod_jurusan/crud_jurusan.php?pg=tambah',
+            url: 'mod_setting_kartu/crud_setting_kartu.php?pg=tambah',
             data: $(this).serialize(),
             success: function(data) {
 
@@ -138,7 +138,7 @@
         }).then((result) => {
             if (result) {
                 $.ajax({
-                    url: 'mod_jurusan/crud_jurusan.php?pg=hapus',
+                    url: 'mod_setting_kartu/crud_setting_kartu.php?pg=hapus',
                     method: "POST",
                     data: 'id_jurusan=' + id,
                     success: function(data) {

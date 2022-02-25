@@ -186,10 +186,16 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
                 <!-- / -->
                 <tr>
-                    <td><b>Tahun Lahir</b></td>
-                    <td align="left"><?= $siswa['tahun_lahir_ayah']  ?></td>
-                    <td align="left"><?= $siswa['tahun_lahir_ibu']  ?></td>
-                    <td align="left"><?= $siswa['tahun_lahir_wali']  ?></td>
+                    <td><b>Tempat Lahir</b></td>
+                    <td align="left"><?= $siswa['tempat_lahir_ayah'] ?></td>
+                    <td align="left"><?= $siswa['tempat_lahir_ibu'] ?></td>
+                    <td align="left"><?= $siswa['tempat_lahir_wali'] ?></td>
+                </tr>
+                <tr>
+                    <td><b>Tgl & Tahun Lahir</b></td>
+                    <td align="left"><?= $siswa['ttl_ayah'] ?></td>
+                    <td align="left"><?= $siswa['ttl_ibu'] ?></td>
+                    <td align="left"><?= $siswa['ttl_wali'] ?></td>
                 </tr>
                 <tr>
                     <td><b>Pendidikan</b></td>

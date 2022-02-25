@@ -51,7 +51,8 @@ if (!isset($_SESSION['id_user'])) {
             <th>No KK</th>
             <th>NIK Ayah</th>
             <th>Nama Ayah</th>
-            <th>Tahun Lahir</th>
+            <th>Tempat Lahir</th>
+            <th>Tgl & Tahun Lahir</th>
             <th>Pendidikan</th>
             <th>Pekerjaan</th>
             <th>Penghasilan</th>
@@ -65,7 +66,8 @@ if (!isset($_SESSION['id_user'])) {
             <th>No Hp</th>
             <th>NIK Wali</th>
             <th>Nama Wali</th>
-            <th>Tahun Lahir</th>
+            <th>Tempat Lahir</th>
+            <th>Tgl & Tahun Lahir</th>
             <th>Pendidikan</th>
             <th>Pekerjaan</th>
             <th>Penghasilan</th>
@@ -151,14 +153,16 @@ if (!isset($_SESSION['id_user'])) {
                 <td class="str"><?= $daftar['no_kk'] ?></td>
                 <td class="str"><?= $daftar['nik_ayah'] ?></td>
                 <td><?= $daftar['nama_ayah'] ?></td>
-                <td><?= $daftar['tahun_lahir_ayah'] ?></td>
+                <td><?= $daftar['tempat_lahir_ayah'] ?></td>
+                <td><?= $daftar['ttl_ayah'] ?></td>
                 <td><?= $daftar['pendidikan_ayah'] ?></td>
                 <td><?= $daftar['pekerjaan_ayah'] ?></td>
                 <td><?= $daftar['penghasilan_ayah'] ?></td>
                 <td class="str"><?= $daftar['no_hp_ayah'] ?></td>
                 <td class="str"><?= $daftar['nik_ibu'] ?></td>
                 <td><?= $daftar['nama_ibu'] ?></td>
-                <td><?= $daftar['tahun_lahir_ibu'] ?></td>
+                <td><?= $daftar['tempat_lahir_ayah'] ?></td>
+                <td><?= $daftar['ttl_ayah'] ?></td>
                 <td><?= $daftar['pendidikan_ibu'] ?></td>
                 <td><?= $daftar['pekerjaan_ibu'] ?></td>
                 <td><?= $daftar['penghasilan_ibu'] ?></td>

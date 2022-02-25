@@ -533,9 +533,15 @@ tipe_prestasi       is null
                                 </div>
                                 <!-- tempat ayah -->
                                 <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tahun Lahir</label>
-                                    <div class="col-sm-12 col-md-3">
-                                        <input type="number" name="tahunlahirayah" class="form-control" value="<?= $siswa['tahun_lahir_ayah'] ?>" required>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tempat Lahir</label>
+                                    <div class="col-sm-12 col-md-5">
+                                        <input type="text" name="tempatlahirayah" class="form-control" value="<?= $siswa['tempat_lahir_ayah'] ?>" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tgl & Tahun Lahir</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <input type="text" name="tgllahirayah" class="form-control datepicker" value="<?= $siswa['ttl_ayah'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
@@ -604,9 +610,15 @@ tipe_prestasi       is null
                                 </div>
                                 <!-- tempat ibu -->
                                 <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tahun Lahir</label>
-                                    <div class="col-sm-12 col-md-3">
-                                        <input type="number" name="tahunlahiribu" class="form-control" value="<?= $siswa['tahun_lahir_ibu'] ?>" required>
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tempat Lahir</label>
+                                    <div class="col-sm-12 col-md-5">
+                                        <input type="text" name="tempatlahiribu" class="form-control" value="<?= $siswa['tempat_lahir_ibu'] ?>" required>
+                                    </div>
+                                </div>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tgl & Tahun Lahir</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <input type="text" name="tgllahiribu" class="form-control datepicker" value="<?= $siswa['ttl_ibu'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">

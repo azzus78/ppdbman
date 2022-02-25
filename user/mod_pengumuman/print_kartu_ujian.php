@@ -182,11 +182,12 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
                 <tr>
                     <td>Hari/Tanggal Ujian</td>
-                    <td>: Selasa, 6 Juli 2021</td>
+                    <td>: <?= $siswa[''] ?>, <?= $siswa[''] ?></td>
+                    
                 </tr>
                 <tr>
                     <td>Waktu Ujian</td>
-                    <td>: 08.00 - 11.00 WIB</td>
+                    <td>: <?= $siswa[''] ?> - <?= $siswa[''] ?> WIB</td>
                 </tr>
             </table>
         </div>

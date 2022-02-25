@@ -194,8 +194,12 @@ while ($keter=mysqli_fetch_array($query)) {
                                             <td align="left"><?= $siswa['nama_ayah'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td align="right"><b>Tahun Lahir</b></td>
-                                            <td align="left"><?= $siswa['tahun_lahir_ayah'] ?></td>
+                                            <td align="right"><b>Tempat Lahir</b></td>
+                                            <td align="left"><?= $siswa['tempat_lahir_ayah'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"><b>Tgl & Tahun Lahir</b></td>
+                                            <td align="left"><?= $siswa['ttl_ayah'] ?></td>
                                         </tr>
                                         <tr>
                                             <td align="right"><b>Pendidikan Ayah</b></td>
@@ -226,8 +230,12 @@ while ($keter=mysqli_fetch_array($query)) {
                                             <td align="left"><?= $siswa['nama_ibu'] ?></td>
                                         </tr>
                                         <tr>
-                                            <td align="right"><b>Tahun Lahir</b></td>
-                                            <td align="left"><?= $siswa['tahun_lahir_ibu'] ?></td>
+                                            <td align="right"><b>Tempat Lahir</b></td>
+                                            <td align="left"><?= $siswa['tempat_lahir_ayah'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"><b>Tgl & Tahun Lahir</b></td>
+                                            <td align="left"><?= $siswa['ttl_ayah'] ?></td>
                                         </tr>
                                         <tr>
                                             <td align="right"><b>Pendidikan Ibu</b></td>
