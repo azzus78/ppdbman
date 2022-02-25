@@ -140,7 +140,7 @@ while ($keter=mysqli_fetch_array($query)) {
             <table>
                 <tr>
                     <td>
-                        <img src="../../../assets/images/man.png" width="36" height"36" style="margin: 0;"/>
+                        <img src="../../assets/img/logo/logoman.png" width="36" height"36" style="margin: 0;"/>
                     </td>
                     <td class="headerText">
                         <p>KARTU TES PPDB</p>

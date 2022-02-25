@@ -47,4 +47,7 @@ if ($pg == '') {
 } elseif ($pg == 'syarat') {
     cek_login_admin();
     include "mod_web/syarat.php";
+} elseif ($pg == 'setting_kartu') {
+    cek_login_admin();
+    include "mod_setting_kartu/setting_kartu.php";
 }

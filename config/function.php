@@ -236,6 +236,7 @@ $peringkatprestasi = array(1, 2, 3, 4, 5, 6);
 $keterampilan = array("DKV (Desain Komunikasi Visual)", "Tata Boga", "Kria Batik", "Tata Rias", "Otomotif");
 $jenis_prestasi = array("AKADEMIK","NON AKADEMIK");
 $jenis_prestasi_akademik = array("Olimpiade", "KIR", "Kompetisi Sains", "MTQ",);
+$hari = array("Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu", "Minggu",);
 function kata($x)
 {
 	$x = abs($x);
