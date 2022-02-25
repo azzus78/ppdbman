@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Oxygen:400,700');
+
+body{
+	font-family: 'Oxygen', sans-serif;
+}
+
+
+
+
+.jumbotron-header {
+
+	background-image: url(../img/header-bg.png);
+	background-size: cover;
+
+	color: #ebebeb;
+	opacity: 35;
+}
+.jumbotron-navigasi-halaman{
+	background-image: url(../img/header-bg.png);
+	background-size: cover;
+	background-color: 
+}
+.jumbotron-login{
+	background-image: url(../img/login_background.png);
+	background-size: cover;
+	background-color: 
+}
+.login1{
+	background-image: url(../img/sekolah-bg.png);
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-color: ;
+
+}
+.login2{
+	background-image: url(../img/sekolah-bg-wht.png);
+	background-size: cover; 
+	background-repeat: no-repeat;
+	background-color: ;
+
+}
+.loginbox{
+	width: 320px;
+	height: 420px;
+	background:rgba(0,114,188,.5);
+	color:#000;
+	top:50%;
+	margin-left: 38%;
+	
+}
+
+.jumbotron p{
+	margin-bottom: 15px;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+.img-logo-header{
+	width: 110px;
+    height: auto;
+}
+
+hr{
+	width: 100px;
+	border-top: 2px solid #06a0b3;
+}
+
+.btn-sub-berita{
+	color: #fff;
+    background-color: #06a0b3;
+    border-color: #06a0b3;
+}
+
+.btn-primary:hover{
+	color: #3c3b3b;
+    background-color: #fdd937;
+    border-color: #fdd937;
+}
+.next_btn:hover{
+	color: #3c3b3b;
+    background-color: #fdd937;
+    border-color: #fdd937;
+}
+.jumbotron-info{
+	background-image: url(../img/sekolah-bg.png);
+	background-size: cover;
+	color: #f8ffd0;
+}
+
+.jumbotron-guru {
+	background-image: url(../img/sekolah-bg-tls.png);
+	background-size: cover;
+	color: #f8ffd0;
+
+}
+.jumbotron-galeri{
+	background-image: url(../img/sekolah-bg-sw.png);
+	background-size: cover;
+	color: #f3f9b2;
+}
+.jumbotron-galeri hr{
+	width: 100px;
+	border-top: 2px solid #f3f9b2;
+
+}
+
+/* overlay*/
+.overlay{
+	width: 0;
+	height: 0;
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	left: 0;
+	background:rgba(0,0,0,0);
+	z-index: 9999;
+	transition: .7s;
+	text-align: center;
+	padding: 100px 0px;
+}
+
+.overlay:target{
+	width: auto;
+	height: auto;
+	bottom: 0;
+	right: 0;
+	background:rgba(0,0,0,.8);
+}
+
+.overlay img{
+	max-height: 100%;
+	box-shadow: 2px 2px 15px rgba(0,0,0,.8)
+	
+
+}
+.overlay:target img{
+	animation: zoomdanfade .5s;
+}
+
+.overlay .close{
+	position: absolute;
+	top: 60px;
+	color: white;
+	font-size: 30px;
+	opacity: 0;
+}
+
+.overlay:target .close{
+	animation: SlideDownFade .5s .6s forwards;
+}
+.overlay p{
+	opacity: 0;
+}
+.overlay:target p{
+	animation: zoomdanfade .4s .3s forwards;
+}
+ 
+.footer-bg{
+	background-image: url(../img/sekolah-bg-blk.png);
+	background-size: cover;
+	color: #f8ffd0;
+
+}
+
+.footer-bg hr{
+	width: 160px;
+	border-top: 2px solid #06a0b3;
+	margin-right:0px;
+	margin-left:0px;
+}
+
+.hover1{
+	background-color: #e6e6e6;
+    border-color: white;
+    color: #06a0b3;
+}
+/*css login*/
+.bg_login{
+	background: url(../img/) no-repeat;
+	width: 100%;
+	height: 100%;
+}
+.form-login{
+	/*border:1px solid #fff;*/
+	padding: 30px 40px;
+	margin-top: 20px;
+	
+}
+
+/* animasi overlay*/
+@keyframes zoomdanfade{
+	0%{
+		transform: scale(0);
+		opacity: 0;
+	}
+	100%{
+		transform: scale(1);
+		opacity: 1
+
+	}
+}
+
+@keyframes SlideDownFade{
+	0%{
+		opacity: 0;
+		margin-top: -20px;
+	}
+
+	100%{
+		opacity: 1;
+		margin-top: 0;
+	}
+}
