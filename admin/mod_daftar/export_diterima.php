@@ -161,19 +161,12 @@ if (!isset($_SESSION['id_user'])) {
                 <td class="str"><?= $daftar['no_hp_ayah'] ?></td>
                 <td class="str"><?= $daftar['nik_ibu'] ?></td>
                 <td><?= $daftar['nama_ibu'] ?></td>
-                <td><?= $daftar['tempat_lahir_ayah'] ?></td>
-                <td><?= $daftar['ttl_ayah'] ?></td>
+                <td><?= $daftar['tempat_lahir_ibu'] ?></td>
+                <td><?= $daftar['ttl_ibu'] ?></td>
                 <td><?= $daftar['pendidikan_ibu'] ?></td>
                 <td><?= $daftar['pekerjaan_ibu'] ?></td>
                 <td><?= $daftar['penghasilan_ibu'] ?></td>
                 <td class="str"><?= $daftar['no_hp_ibu'] ?></td>
-                <td class="str"><?= $daftar['nik_wali'] ?></td>
-                <td><?= $daftar['nama_wali'] ?></td>
-                <td><?= $daftar['tahun_lahir_wali'] ?></td>
-                <td><?= $daftar['pendidikan_wali'] ?></td>
-                <td><?= $daftar['pekerjaan_wali'] ?></td>
-                <td><?= $daftar['penghasilan_wali'] ?></td>
-                <td class="str"><?= $daftar['no_hp_wali'] ?></td>
                 <td><?= $daftar['jenjang_sekolah'] ?></td>
                 <td><?= $daftar['status_sekolah'] ?></td>
                 <td><?= $daftar['asal_sekolah'] ?></td>
