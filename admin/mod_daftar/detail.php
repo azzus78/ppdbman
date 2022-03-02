@@ -231,11 +231,11 @@ while ($keter=mysqli_fetch_array($query)) {
                                         </tr>
                                         <tr>
                                             <td align="right"><b>Tempat Lahir</b></td>
-                                            <td align="left"><?= $siswa['tempat_lahir_ayah'] ?></td>
+                                            <td align="left"><?= $siswa['tempat_lahir_ibu'] ?></td>
                                         </tr>
                                         <tr>
                                             <td align="right"><b>Tgl & Tahun Lahir</b></td>
-                                            <td align="left"><?= $siswa['ttl_ayah'] ?></td>
+                                            <td align="left"><?= $siswa['ttl_ibu'] ?></td>
                                         </tr>
                                         <tr>
                                             <td align="right"><b>Pendidikan Ibu</b></td>
