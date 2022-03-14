@@ -80,7 +80,7 @@
                         </thead>
                         <tbody>
                             <?php
-                            $query = mysqli_query($koneksi, "select * from kartu");
+                            $query = mysqli_query($koneksi, "select * from setting_kartu_ujian");
                             $no = 0;
                             while ($kartu = mysqli_fetch_array($query)) {
                                 $no++;
@@ -88,10 +88,10 @@
                                 <tr>
                                     <td><?= $no; ?></td>
                                     <td><?= $kartu['hari'] ?></td>
-                                    <td><?= $kartu['tgl'] ?></td>
-                                    <td><?= $kartu['waktu_ujian_mulai'] ?></td>
-                                    <td><?= $kartu['waktu_ujian_selesai'] ?></td>
-                                    <td><?= $kartu['cbt'] ?></td>
+                                    <td><?= $kartu['tanggal'] ?></td>
+                                    <td><?= $kartu['waktu_mulai'] ?></td>
+                                    <td><?= $kartu['waktu_selesai'] ?></td>
+                                    <td><?= $kartu['link'] ?></td>
                                 </tr>
                             <?php }
                             ?>
@@ -103,7 +103,7 @@
     </div>
 </div>
 <script>
-    $('#form-tambah').submit(function(e) {
+    $('#form-setting_kartu').submit(function(e) {
         e.preventDefault();
         $.ajax({
             type: 'POST',
