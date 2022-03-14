@@ -679,7 +679,7 @@ tipe_prestasi       is null
                                     <div>
                                         <label for="berkas_kk">Upload Berkas Kartu Keluarga (KK)*</label>
                                         <?php if ($cek3 == 0) { ?>
-                                        <input type="file" class="form-control-file" id="berkas_kk" name="berkas_kk" accept="image/*" aria-describedby="file-berkas-kk">
+                                        <input type="file" class="form-control-file" id="berkas_kk" name="berkas_kk" accept="image/*" aria-describedby="file-berkas-kk" required>
                                         <?php } else { ?>
                                         <input type="file" class="form-control-file" id="berkas_kk" name="berkas_kk" accept="image/*" aria-describedby="file-berkas-kk" required>
                                         <?php } ?>

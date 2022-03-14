@@ -101,13 +101,15 @@ $cek3 = mysqli_num_rows(mysqli_query($koneksi, "select * from daftar where
  no_kk              is  null and
  nik_ayah                 is  null and
  nama_ayah                     is  null and 
- tahun_lahir_ayah                   is  null and
+ tempat_ayah                   is  null and
+ tgl_lahir_ayah                   is  null and
  pendidikan_ayah              is  null and
  pekerjaan_ayah                  is  null and
  penghasilan_ayah              is  null and
  nik_ibu                 is  null and
  nama_ibu                     is  null and 
- tahun_lahir_ibu                   is  null and
+ tempat_ibu                   is  null and
+ tgl_lahir_ibu                   is  null and
  pendidikan_ibu              is  null and
  pekerjaan_ibu                 is  null and
  penghasilan_ibu              is  null and
