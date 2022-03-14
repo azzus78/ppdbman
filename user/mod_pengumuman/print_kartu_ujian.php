@@ -4,6 +4,7 @@ require "../../config/function.php";
 require "../../config/functions.crud.php";
 include "../../assets/modules/phpqrcode/qrlib.php";
 $siswa = fetch($koneksi, 'daftar', ['nisn' => dekripsi($_GET['id'])]);
+$setting_kartu_ujian = fetch($koneksi, 'setting_kartu_ujian', ['id_setting_kartu' => 1]);
 $kartu_ujian = fetch($koneksi, 'kartu_ujian', ['nisn' => dekripsi($_GET['id'])]);
 $query=mysqli_query($koneksi, 'select * from jurusan');
 while ($jurusan=mysqli_fetch_array($query)) {
@@ -182,12 +183,12 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
                 <tr>
                     <td>Hari/Tanggal Ujian</td>
-                    <td>: <?= $siswa[''] ?>, <?= $siswa[''] ?></td>
+                    <td>: <?= $setting_kartu_ujian['hari'] ?>, <?php echo date('d-m-Y', strtotime($setting_kartu_ujian['tanggal'])); ?></td>
                     
                 </tr>
                 <tr>
                     <td>Waktu Ujian</td>
-                    <td>: <?= $siswa[''] ?> - <?= $siswa[''] ?> WIB</td>
+                    <td>: <?= $setting_kartu_ujian['waktu_mulai'] ?> - <?= $setting_kartu_ujian['waktu_selesai'] ?> WIB</td>
                 </tr>
             </table>
         </div>

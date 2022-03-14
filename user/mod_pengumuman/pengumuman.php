@@ -1,3 +1,4 @@
+<?php $setting_kartu_ujian = fetch($koneksi, 'setting_kartu_ujian', ['id_setting_kartu' => 1]); ?>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -56,13 +57,22 @@
                                 });
                                 </script>
                                 <!-- Buka Tes CBT PPDB -->
+                                <?php
+                                if ($setting_kartu_ujian['tanggal'] <= date('Y-m-d') && $setting_kartu_ujian['waktu_mulai'] <= date('H:i:s')) {
+                                ?>
                                 <div class="col-sm-12 col-md-auto mb-2">
                                    <a onclick="myFunction()"><button type="button" class="btn btn-outline-warning">
                                     <i class="fas fa-chalkboard-teacher"></i> TES PPDB </button></a>
                                 </div>
+                                <?php } else { ?>
+                                <div class="col-sm-12 col-md-auto mb-2">
+                                   <a><button type="button" class="btn btn-outline-warning disabled">
+                                    <i class="fas fa-chalkboard-teacher"></i> TES PPDB </button></a>
+                                </div>
+                                <?php } ?>
                                 <script>
                                    function myFunction() {
-                                      window.open("https://cbt10.man1nganjuk.sch.id");
+                                      window.open("<?php echo $setting_kartu_ujian['link']; ?>");
                                     }
                                 </script>
                             </div>
@@ -77,7 +87,7 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <span>Untuk Tes PPDB Akan dilaksanakan pada tanggal 6 Juli 2021 dengan Mata Pelajaran Tes Sebagai berikut:<br>
+                                            <span>Untuk Tes PPDB Akan dilaksanakan pada tanggal <?php echo date('d-m-Y', strtotime($setting_kartu_ujian['tanggal'])); ?> dengan Mata Pelajaran Tes Sebagai berikut:<br>
                                                 1. Matematika<br>
                                                 2. Bahasa Indonesia<br>
                                                 3. Bahasa Inggris<br>
