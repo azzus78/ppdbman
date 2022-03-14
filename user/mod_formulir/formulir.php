@@ -50,13 +50,15 @@ id_daftar         = '$siswa[id_daftar]' and
 no_kk              is  null and
 nik_ayah                 is  null and
 nama_ayah                     is  null and 
-tahun_lahir_ayah                   is  null and
+tempat_ayah                   is  null and
+tgl_lahir_ayah                   is  null and
 pendidikan_ayah              is  null and
 pekerjaan_ayah                  is  null and
 penghasilan_ayah              is  null and
 nik_ibu                 is  null and
 nama_ibu                     is  null and 
-tahun_lahir_ibu                   is  null and
+tempat_ibu                   is  null and
+tgl_lahir_ibu                   is  null and
 pendidikan_ibu              is  null and
 pekerjaan_ibu                 is  null and
 penghasilan_ibu              is  null and
@@ -517,13 +519,13 @@ file_kartu                    is  null
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tempat Lahir</label>
                                     <div class="col-sm-12 col-md-5">
-                                        <input type="text" name="tempatlahirayah" class="form-control" value="<?= $siswa['tempat_lahir_ayah'] ?>" required>
+                                        <input type="text" name="tempatlahirayah" class="form-control" value="<?= $siswa['tempat_ayah'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tgl & Tahun Lahir</label>
                                     <div class="col-sm-12 col-md-4">
-                                        <input type="text" name="tgllahirayah" class="form-control datepicker" value="<?= $siswa['ttl_ayah'] ?>" required>
+                                        <input type="text" name="tgllahirayah" class="form-control datepicker" value="<?= $siswa['tgl_lahir_ayah'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
@@ -594,13 +596,13 @@ file_kartu                    is  null
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tempat Lahir</label>
                                     <div class="col-sm-12 col-md-5">
-                                        <input type="text" name="tempatlahiribu" class="form-control" value="<?= $siswa['tempat_lahir_ibu'] ?>" required>
+                                        <input type="text" name="tempatlahiribu" class="form-control" value="<?= $siswa['tempat_ibu'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Tgl & Tahun Lahir</label>
                                     <div class="col-sm-12 col-md-4">
-                                        <input type="text" name="tgllahiribu" class="form-control datepicker" value="<?= $siswa['ttl_ibu'] ?>" required>
+                                        <input type="text" name="tgllahiribu" class="form-control datepicker" value="<?= $siswa['tgl_lahir_ibu'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">

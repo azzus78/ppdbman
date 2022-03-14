@@ -11,13 +11,15 @@ id_daftar         = '$id' and
 no_kk              is  null and
 nik_ayah                 is  null and
 nama_ayah                     is  null and 
-tahun_lahir_ayah                   is  null and
+tempat_ayah                     is  null and 
+tgl_lahir_ayah                   is  null and
 pendidikan_ayah              is  null and
 pekerjaan_ayah                  is  null and
 penghasilan_ayah              is  null and
 nik_ibu                 is  null and
 nama_ibu                     is  null and 
-tahun_lahir_ibu                   is  null and
+tempat_ibu                     is  null and 
+tgl_lahir_ibu                   is  null and
 pendidikan_ibu              is  null and
 pekerjaan_ibu                 is  null and
 penghasilan_ibu              is  null and
@@ -200,14 +202,16 @@ if ($pg == 'simpanortu') {
                 'no_kk'               => $_POST['nokk'],
                 'nik_ayah'            => $_POST['nikayah'],
                 'nama_ayah'           => mysqli_escape_string($koneksi, $_POST['namaayah']),
-                'tahun_lahir_ayah'    => $_POST['tahunlahirayah'],
+                'tempat_ayah'    => $_POST['tempatlahirayah'],
+                'tgl_lahir_ayah'    => $_POST['tgllahirayah'],
                 'pendidikan_ayah'     => $_POST['pendidikan_ayah'],
                 'pekerjaan_ayah'      => $_POST['pekerjaan_ayah'],
                 'penghasilan_ayah'    => $_POST['penghasilan_ayah'],
                 'no_hp_ayah'          => $_POST['nohpayah'],
                 'nik_ibu'             => $_POST['nikibu'],
                 'nama_ibu'            => mysqli_escape_string($koneksi, $_POST['namaibu']),
-                'tahun_lahir_ibu'     => $_POST['tahunlahiribu'],
+                'tempat_ibu'    => $_POST['tempatlahiribu'],
+                'tgl_lahir_ibu'     => $_POST['tgllahiribu'],
                 'pendidikan_ibu'      => $_POST['pendidikan_ibu'],
                 'pekerjaan_ibu'       => $_POST['pekerjaan_ibu'],
                 'penghasilan_ibu'     => $_POST['penghasilan_ibu'],
