@@ -24,7 +24,7 @@ if ($pg == 'tambah') {
     $lastNoUrut = substr($lastNoTransaksi, 8, 4);
     $nextNoUrut = $lastNoUrut + 1;
     $nextNoTransaksi = $today . sprintf('%04s', $nextNoUrut);
-    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'pdf', 'PNG'];
+    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'pdf', 'PNG', 'svg', 'gif'];
     if ($_FILES['bukti']['name'] <> '') {
         $logo = $_FILES['bukti']['name'];
         $temp = $_FILES['bukti']['tmp_name'];

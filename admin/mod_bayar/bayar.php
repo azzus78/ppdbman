@@ -10,7 +10,7 @@
                     <select class="form-control select2" style="width: 100%" name="id" required>
                         <option value="">Cari Data Pendaftar</option>
                         <?php
-                        $query = mysqli_query($koneksi, "SELECT no_daftar,id_daftar,nama FROM daftar where status in('1')");
+                        $query = mysqli_query($koneksi, "SELECT no_daftar,id_daftar,nama FROM daftar where status in('0,1')");
                         while ($siswa = mysqli_fetch_array($query)) {
                         ?>
                             <option value="<?= enkripsi($siswa['id_daftar']) ?>"><?= $siswa['no_daftar'] ?> <?= $siswa['nama'] ?></option>
@@ -23,7 +23,6 @@
             </div>
         </div>
     </form>
-
 </div>
 <?php if (isset($_GET['id']) == '') { ?>
     <?php if ($user['level'] == 'admin' or $user['level'] == 'bendahara' or $user['level'] == 'kepala') { ?>
@@ -33,8 +32,11 @@
                     <div class="card-header">
                         <h4>Data Belum Verifikasi</h4>
                         <div class="card-header-action">
-                            <a class="btn btn-primary" href="mod_bayar/export_bayar.php" role="button"> Download Excel</a>
+                            <a class="btn btn-outline-info" href="mod_bayar/export_bayar.php" role="button"><i class="far fa-file-excel"></i> Download Excel</a>
                         </div>
+                        <button type="button" class="btn btn-icon icon-left btn btn-outline-warning" data-toggle="modal" data-target="#petugas_komite_man" style="margin:20px;">
+                            <i class="fas fa-cogs"></i> Setting Kuitansi
+                        </button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -98,7 +100,6 @@
                                     ?>
                                 </tbody>
                             </table>
-
                         </div>
                     </div>
                 </div>
@@ -296,6 +297,32 @@
         });
     </script>
 <?php } ?>
+<div>
+    <!-- Modal Setting Kuitansi -->
+    <div class="modal fade" id="petugas_komite_man" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Setting Kuitansi</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form id="form-petugas_komite_man">
+                    <div class="modal-body">
+                    <div class="form-group">
+                        <label for="petugas_komite_man">Tambah Petugas Komite</label>
+                        <input type="text" class="form-control uang" id="petugas_komite_man" name="petugas_komite_man"  placeholder="Prasojo" required>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
     $('#form-bayar').submit(function(e) {
         e.preventDefault();
@@ -506,5 +533,59 @@
                 });
             }
         })
+    });
+    
+    $('#form-petugas_komite_man').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'mod_bayar/crud_bayar.php?pg=tambah',
+            data: $(this).serialize(),
+            success: function(data) {
+
+                iziToast.success({
+                    title: 'Mantap!',
+                    message: 'Data Berhasil ditambahkan',
+                    position: 'topRight'
+                });
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
+                $('#tambahdata').modal('hide');
+                //$('#bodyreset').load(location.href + ' #bodyreset');
+            }
+        });
+        return false;
+    });
+
+    $('#table-1').on('click', '.hapus', function() {
+        var id = $(this).data('id');
+        console.log(id);
+        swal({
+            title: 'Are you sure?',
+            text: 'Akan menghapus data ini!',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then((result) => {
+            if (result) {
+                $.ajax({
+                    url: 'mod_bayar/crud_bayar.php?pg=hapus',
+                    method: "POST",
+                    data: 'id_jurusan=' + id,
+                    success: function(data) {
+                        iziToast.error({
+                            title: 'Horee!',
+                            message: 'Data Berhasil dihapus',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+                    }
+                });
+            }
+        })
+
     });
 </script>

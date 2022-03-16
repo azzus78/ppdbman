@@ -153,7 +153,7 @@ if (isset($_SESSION['id_user'])) {
         </div>
         <footer class="main-footer">
           <div class="footer-left">
-            Copyright &copy; <?= date('Y') ?> MAN 1 NGANJUK <div class="bullet"></div> Support By <a href="https://man1nganjuk.sch.id/">Politeknik Elektronika Negeri Surabaya & Institut Teknologi Sepuluh November Surabaya</a>
+            Copyright &copy; <?= date('Y') ?> MAN 1 NGANJUK <div class="bullet"></div> Support By <a href="https://www.man1nganjuk.sch.id/">Politeknik Elektronika Negeri Surabaya & Institut Teknologi Sepuluh November Surabaya</a>
           </div>
           <div class="footer-right">
 

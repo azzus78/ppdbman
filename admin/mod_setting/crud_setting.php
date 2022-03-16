@@ -22,7 +22,7 @@ if ($pg == 'ubah') {
     $exec = update($koneksi, 'setting', $data, $where);
     echo mysqli_error($koneksi);
     if ($exec) {
-        $ektensi = ['jpg', 'png'];
+        $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'pdf', 'PNG', 'svg', 'gif'];
         if ($_FILES['logo']['name'] <> '') {
             $logo = $_FILES['logo']['name'];
             $temp = $_FILES['logo']['tmp_name'];
