@@ -22,6 +22,7 @@ if ($pg == 'tambah') {
     $existing = mysqli_query($koneksi, "select * from setting_kartu_ujian");
     if (mysqli_num_rows($existing) > 0) {
         $data = [
+            'tahun_ajaran'        => $_POST['ajaran'],
             'hari'        => $_POST['hari'],
             'tanggal'   => $_POST['tgl'],
             'waktu_mulai'        => $_POST['waktu_ujian_mulai'],
@@ -32,6 +33,7 @@ if ($pg == 'tambah') {
         echo mysqli_error($koneksi);
     } else {
         $data = [
+            'tahun_ajaran'        => $_POST['ajaran'],
             'hari'        => $_POST['hari'],
             'tanggal'   => $_POST['tgl'],
             'waktu_mulai'        => $_POST['waktu_ujian_mulai'],

@@ -146,7 +146,7 @@ while ($keter=mysqli_fetch_array($query)) {
                     <td class="headerText">
                         <p>KARTU TES PPDB</p>
                         <p class="second">MADRASAH ALIYAH NEGERI (MAN) 1 NGANJUK</p>
-                        <p>TAHUN AJARAN 2021/2022</p>
+                        <p>TAHUN AJARAN <?= $setting_kartu_ujian['tahun_ajaran'] ?></p>
                     </td>
                 </tr>
             </table>

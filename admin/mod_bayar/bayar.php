@@ -10,7 +10,7 @@
                     <select class="form-control select2" style="width: 100%" name="id" required>
                         <option value="">Cari Data Pendaftar</option>
                         <?php
-                        $query = mysqli_query($koneksi, "SELECT no_daftar,id_daftar,nama FROM daftar where status in('0,1')");
+                        $query = mysqli_query($koneksi, "SELECT no_daftar,id_daftar,nama FROM daftar where status in('1')");
                         while ($siswa = mysqli_fetch_array($query)) {
                         ?>
                             <option value="<?= enkripsi($siswa['id_daftar']) ?>"><?= $siswa['no_daftar'] ?> <?= $siswa['nama'] ?></option>
@@ -46,6 +46,7 @@
                                         </th>
                                         <th>Kode Transaksi</th>
                                         <th>Nama Siswa</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Jumlah Bayar</th>
                                         <th>Tgl Bayar</th>
                                         <th>Penerima</th>
@@ -66,8 +67,9 @@
                                             <td><?= $no; ?></td>
                                             <td><?= $bayar['id_bayar'] ?></td>
                                             <td><?= $bayar['nama'] ?></td>
+                                            <td><?= $bayar['jenkel'] ?></td>
                                             <td><?= "Rp " . number_format($bayar['jumlah'], 0, ",", ".") ?></td>
-                                            <td><?= $bayar['tgl_bayar'] ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($bayar['tgl_bayar'])); ?></td>
                                             <td><?php if ($user) {
                                                     echo $user['nama_user'];
                                                 } else {
@@ -121,6 +123,7 @@
                                         </th>
                                         <th>Kode Transaksi</th>
                                         <th>Nama Siswa</th>
+                                        <th>Jenis Kelamin</th>
                                         <th>Jumlah Bayar</th>
                                         <th>Tgl Bayar</th>
                                         <th>Penerima</th>
@@ -141,8 +144,9 @@
                                             <td><?= $no; ?></td>
                                             <td><?= $bayar['id_bayar'] ?></td>
                                             <td><?= $bayar['nama'] ?></td>
+                                            <td><?= $bayar['jenkel'] ?></td>
                                             <td><?= "Rp " . number_format($bayar['jumlah'], 0, ",", ".") ?></td>
-                                            <td><?= $bayar['tgl_bayar'] ?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($bayar['tgl_bayar'])); ?></td>
                                             <td><?php if ($user) {
                                                     echo $user['nama_user'];
                                                 } else {
@@ -189,8 +193,11 @@
                     <div class="card-header-action">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahdata">
-                            <i class="fas fa-plus-circle    "></i> Tambah Bayar
+                            <i class="fas fa-plus-circle"></i> Tambah Bayar
                         </button>
+                        <a href="?pg=bayar"><button type="button" class="btn btn-warning">Kembali
+                            <i class="fas fa-backward"></i>
+                        </button></a>
                     </div>
                 </div>
                 <div class="card-body">

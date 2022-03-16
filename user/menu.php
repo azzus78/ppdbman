@@ -12,6 +12,6 @@
   		<?php } ?>
   	<?php } ?>
   	<?php if ($verified) { ?>
-     <li><a class="nav-link" href="?pg=bayar"><i class="fas fa-money-bill"></i> <span>Pembayaran</span></a></li> 
+     <li><a class="nav-link" href="?pg=bayar"><i class="far fa-credit-card"></i> <span>Pembayaran</span></a></li> 
     <?php } ?>
 </ul>

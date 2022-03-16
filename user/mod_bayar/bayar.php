@@ -149,7 +149,7 @@
                                     <td><?= $bayar['id_bayar'] ?></td>
                                     <td><?= $bayar['nama'] ?></td>
                                     <td><?= "Rp " . number_format($bayar['jumlah'], 0, ",", ".") ?></td>
-                                    <td><?= $bayar['tgl_bayar'] ?></td>
+                                    <td><?php echo date('d-m-Y', strtotime($bayar['tgl_bayar'])); ?></td>
                                     <td>
                                         <?php if ($bayar['verifikasi'] == 1) { ?>
                                             <span class="badge badge-success">Pembayaran diterima</span>

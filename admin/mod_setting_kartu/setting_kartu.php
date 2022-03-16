@@ -17,6 +17,10 @@
                 </div>
                 <form id="form-setting_kartu">
                     <div class="modal-body">
+                    <div class="form-group">
+                        <label for="ajaran">Tahun Ajaran</label>
+                        <input type="text" class="form-control uang" id="ajaran" name="ajaran"  placeholder="2022/2023" required>
+                    </div>
                         <div class="form-group">
                             <label for="hari">Hari</label>
                             <select class='form-control' name='hari' required>
@@ -37,7 +41,7 @@
                         <div class="form-group">
                             <label for="waktu">Waktu Ujian Mulai</label>
                             <input type="time" class="form-control uang" name="waktu_ujian_mulai" id="waktu_ujian_mulai" aria-describedby="helpwaktuujian" required><br>
-                            <label for="waktu">Selesai</label>
+                            <label for="waktu">Waktu Ujian Selesai</label>
                             <input type="time" class="form-control uang" name="waktu_ujian_selesai" id="waktu_ujian_selesai" aria-describedby="helpwaktuujian" required>
                         </div>
                         <div class="form-group">
@@ -65,12 +69,13 @@
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table table-striped" id="table-1">
+                    <table class="table table-striped" id="">
                         <thead>
                             <tr>
                                 <th class="text-center">
                                     #
                                 </th>
+                                <th>Tahun Ajaran</th>
                                 <th>Hari</th>
                                 <th>Tanggal Ujian</th>
                                 <th>Waktu Mulai Ujian</th>
@@ -87,8 +92,9 @@
                             ?>
                                 <tr>
                                     <td><?= $no; ?></td>
+                                    <td><?= $kartu['tahun_ajaran'] ?></td>
                                     <td><?= $kartu['hari'] ?></td>
-                                    <td><?= $kartu['tanggal'] ?></td>
+                                    <td><?php echo date('d-m-Y', strtotime($kartu['tanggal'])); ?></td>
                                     <td><?= $kartu['waktu_mulai'] ?></td>
                                     <td><?= $kartu['waktu_selesai'] ?></td>
                                     <td><?= $kartu['link'] ?></td>

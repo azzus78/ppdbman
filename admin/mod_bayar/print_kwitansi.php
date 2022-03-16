@@ -39,13 +39,13 @@ QRcode::png($codeContents, $tempdir . $id_bayar . '.png', QR_ECLEVEL_L, 3, 6);
 
 <body>
     <center>
-    <img src="../../assets/img/avatar/logoman.png">
+    <!-- <img src="../../assets/img/avatar/logoman.png"> -->
     <h3><?= $setting['nama_sekolah'] ?></h3>
     <p><small> <?= $setting['alamat'] ?></small></p>
     </center>
     
     <center>
-        <h3><u>BUKTI DAFTAR ULANG PPDB MAN 1 NGANJUK</u></h3>
+        <h4><u>BUKTI DAFTAR ULANG PPDB MAN 1 NGANJUK <?= date('Y') ?></u></h4>
         <p>NO TRANSAKSI : <?= $id_bayar ?> </p>
     </center>
     <br>
@@ -62,14 +62,14 @@ QRcode::png($codeContents, $tempdir . $id_bayar . '.png', QR_ECLEVEL_L, 3, 6);
             <tr>
                 <td><?= $siswa['nama'] ?></td>
                 <td><?= "Rp " . number_format($bayar['jumlah'], 2, ",", ".") ?></td>
-                <td><?= $bayar['tgl_bayar'] ?></td>
+                <td><?php echo date('d-m-Y', strtotime($bayar['tgl_bayar'])); ?></td>
             </tr>
         </tbody>
     </table>
     <div class="row">
         <div>
             <h5>Terbilang : <?= terbilang($bayar['jumlah'], 2) ?></h5>
-            <small>Print Date : <?= date('Y-m-d H:i:s') ?></small>
+            <small>Print Date : <?= date('d-m-Y H:i:s') ?></small>
         </div>
         <div style="text-align: right">
             <img src="<?= $tempdir . $id_bayar . '.png' ?>" />

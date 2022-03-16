@@ -63,12 +63,12 @@ body  {
 </head>
 
 <body class="layout-3">
-    <div class='loader'></div>
+    <!-- <div class='loader'></div>
     <div class="chating" style=" z-index: 99999; width: 50px; padding: 15px;  bottom: 0; position: fixed; ">
         <a href="https://api.whatsapp.com/send?phone=+62<?= $setting['nolivechat'] ?>&text=<?= $setting['livechat'] ?>">
 
             <img src="assets/img/wa.png" width="150"> </a>
-    </div>
+    </div> -->
     <div id="app">
         <div class="main-wrapper container">
             <!--<div class="navbar-bg"></div>-->

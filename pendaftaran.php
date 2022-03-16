@@ -26,11 +26,11 @@ require "config/functions.crud.php";
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="nisn">NISN* (Klik disini untuk <a target="_blank" href="https://nisn.data.kemdikbud.go.id/">Cek NISN </a>)</label>
+                        <label  for="nisn">NISN<font color="red">*</font> (Klik disini untuk <a target="_blank" href="https://nisn.data.kemdikbud.go.id/">Cek NISN </a>)</label>
                         <input type="number" maxlength="10" minlength="5" class="form-control" name="nisn" placeholder="NISN" autocomplete="off" required>
                     </div>
                     <div class="form-group">
-                        <label for="nama">NAMA LENGKAP*</label>
+                        <label for="nama">NAMA LENGKAP<font color="red">*</font></label>
                         <input type="text" class="form-control" name="nama" placeholder="Nama Lengkap" autocomplete="off" required>
                     </div>
                     <!-- <div class="form-group">

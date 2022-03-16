@@ -13,6 +13,7 @@ header("Content-Disposition: attachment; filename=datasemua_pembayaran.xls");
             </th>
             <th>No Transaksi</th>
             <th>Nama Pendaftar</th>
+            <th>Jenis Kelamin</th>
             <th>Asal Sekolah</th>
             <th>Jumlah Bayar</th>
             <th>Tgl Bayar</th>
@@ -29,10 +30,11 @@ header("Content-Disposition: attachment; filename=datasemua_pembayaran.xls");
         ?>
             <tr>
                 <td><?= $no; ?></td>
-                <td><?= $daftar['id_bayar'] ?></td>
+                <td class="str"><?= $daftar['id_bayar'] ?></td>
                 <td><?= $daftar['nama'] ?></td>
+                <td><?= $daftar['jenkel'] ?></td>
                 <td><?= $daftar['asal_sekolah'] ?></td>
-                <td><?= $daftar['jumlah'] ?></td>
+                <td class="str"><?= $daftar['jumlah'] ?></td>
                 <td><?= $daftar['tgl_bayar'] ?></td>
                 <td>
                     <?php if ($daftar['verifikasi'] == 1) { ?>
