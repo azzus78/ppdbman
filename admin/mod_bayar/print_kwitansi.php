@@ -6,6 +6,7 @@ include "../../assets/modules/phpqrcode/qrlib.php";
 $id_bayar = dekripsi($_GET['id']);
 $bayar = fetch($koneksi, 'bayar', ['id_bayar' => $id_bayar]);
 $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $bayar['id_daftar']]);
+$petugas = fetch($koneksi, 'petugas_komite');
 
 $tempdir = "../../temp/"; //Nama folder tempat menyimpan file qrcode
 if (!file_exists($tempdir)) //Buat folder bername temp
@@ -77,11 +78,10 @@ QRcode::png($codeContents, $tempdir . $id_bayar . '.png', QR_ECLEVEL_L, 3, 6);
     </div>
     <center>
     <div>
-        <h5>KOMITE</h5><br><br>
-        <span>(.....................................................)</span>
+        <h5>PETUGAS</h5><br><br>
+        <span>(<?= $petugas['nama_petugas'] ?>)</span>
     </div>
 </body>
-
 </html>
 <?php
 

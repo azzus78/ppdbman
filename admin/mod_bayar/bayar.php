@@ -34,7 +34,7 @@
                         <div class="card-header-action">
                             <a class="btn btn-outline-info" href="mod_bayar/export_bayar.php" role="button"><i class="far fa-file-excel"></i> Download Excel</a>
                         </div>
-                        <button type="button" class="btn btn-icon icon-left btn btn-outline-warning" data-toggle="modal" data-target="#petugas_komite_man" style="margin:20px;">
+                        <button type="button" class="btn btn-icon icon-left btn btn-outline-warning" data-toggle="modal" data-target="#petugas_man" style="margin:20px;">
                             <i class="fas fa-cogs"></i> Setting Kuitansi
                         </button>
                     </div>
@@ -299,7 +299,7 @@
 <?php } ?>
 <div>
     <!-- Modal Setting Kuitansi -->
-    <div class="modal fade" id="petugas_komite_man" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal fade" id="petugas_man" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -539,7 +539,7 @@
         e.preventDefault();
         $.ajax({
             type: 'POST',
-            url: 'mod_bayar/crud_bayar.php?pg=tambah',
+            url: 'mod_bayar/crud_komite.php?pg=tambah',
             data: $(this).serialize(),
             success: function(data) {
 
@@ -570,7 +570,7 @@
         }).then((result) => {
             if (result) {
                 $.ajax({
-                    url: 'mod_bayar/crud_bayar.php?pg=hapus',
+                    url: 'mod_bayar/crud_komite.php?pg=hapus_komite',
                     method: "POST",
                     data: 'id_jurusan=' + id,
                     success: function(data) {

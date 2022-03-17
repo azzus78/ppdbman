@@ -32,7 +32,7 @@ if ($pg == 'tambah') {
         'id_daftar'     => $_POST['id'],
         'jumlah'        => str_replace(",", "", $_POST['jumlah']),
         'tgl_bayar'     => $_POST['tgl'],
-        'id_user'       => $_SESSION['id_user'],
+        'id_user'       => $_SESSION['id_user']
 
     ];
     $exec = insert($koneksi, 'bayar', $data);

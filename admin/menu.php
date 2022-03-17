@@ -36,8 +36,8 @@
         </li>
     <?php } ?>
     <li><a class="nav-link" href="?pg=pengumuman"><i class="fas fa-bullhorn fa-fw"></i> <span>Pengumuman</span></a></li>
-    <li><a class="nav-link" href="?pg=setting_kartu"><i class="fas fa-address-card fa-fw"></i> <span>Setting Kartu Ujian</span></a></li>
     <?php if ($user['level'] == 'admin') { ?>
+        <li><a class="nav-link" href="?pg=setting_kartu"><i class="fas fa-address-card fa-fw"></i> <span>Setting Kartu Ujian</span></a></li>
         <li class="menu-header">Pengaturan</li>
         <li><a class="nav-link" href="?pg=user"><i class="fas fa-users-cog    "></i> <span>Manajemen User</span></a></li>
         <li><a class="nav-link" href="?pg=setting"><i class="fas fa-cogs "></i> <span>Pengaturan Aplikasi</span></a></li>

@@ -1,6 +1,23 @@
-<div class="section-header">
-    <h1>Hai!, <?= $user['nama_user'] ?></h1>
-</div>
+<?php if ($user['level'] == 'bendahara') { ?>
+    <div class="section-header">
+        <h1>Petugas Komite!, <?= $petugas['nama_petugas'] ?></h1>
+    </div>
+<?php } ?>
+<?php if ($user['level'] == 'admin') { ?>
+    <div class="section-header" >
+        <h1>Welcome!, <?= $user['nama_user'] ?></h1>
+    </div>
+<?php } ?>
+<?php if ($user['level'] == 'kepala') { ?>
+    <div class="section-header" >
+        <h1>Welcome!, <?= $user['nama_user'] ?></h1>
+    </div>
+<?php } ?>
+<?php if ($user['level'] == 'operator') { ?>
+    <div class="section-header" >
+        <h1>Welcome!, <?= $user['nama_user'] ?></h1>
+    </div>
+<?php } ?>
 <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">
         <div class="card card-statistic-1">

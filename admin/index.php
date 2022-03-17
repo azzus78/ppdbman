@@ -7,6 +7,7 @@ require("../config/functions.crud.php");
 
 if (isset($_SESSION['id_user'])) {
   $user = mysqli_fetch_array(mysqli_query($koneksi, "select * from user where id_user='$_SESSION[id_user]'"));
+  $petugas = fetch($koneksi, 'petugas_komite');
 ?>
   <!DOCTYPE html>
   <html lang="en">
