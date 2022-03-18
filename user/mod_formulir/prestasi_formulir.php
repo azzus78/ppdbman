@@ -127,7 +127,7 @@ tipe_prestasi       is null
                                 </div>
                                 <form id="form-ganti-foto">
                                     <div class="modal-body pb-0 mb-0">
-                                        <div class="mb-2"><img alt="image" id="foto-profil-preview" src="mod_formulir/<?= $siswa['foto'] ?>" class="author-box-picture img-thumbnail" style="width: 200px;"></div>
+                                        <div class="mb-2"><img alt="image" id="foto-profil-preview" src="mod_formulir/<?= $siswa['foto'] ?>" class="author-box-picture img-thumbnail" style="width: 200px;" draggable="false"></div>
                                         <div class="form-group text-left">
                                             <input type="file" class="form-control-file" id="foto_siswa" name="foto_siswa" accept="image/*" aria-describedby="file-foto-siswa" onchange="previewImage();" required>
                                             <small id="file-foto-siswa" class="form-text text-muted">Upload file JPG/PNG (Maks 1 MB)</small>
@@ -181,8 +181,8 @@ tipe_prestasi       is null
                     </ul>
                     <div class="tab-content" id="myTabContent2">
                         <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
-                            <center><div><font color="green">Pasfoto Berseragam Ukuran 3X4</font></div> 
-                                <img id="fotoProfilSiswa" alt="image" src="mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture">  <button type="button" class="btn btn-info btn-sm mb-0"  data-toggle="modal" data-target="#gantifoto">Upload Foto</button></center><br>
+                            <center><div><font color="#6495ED">Pasfoto Berseragam Ukuran 3X4</font></div> 
+                                <img id="fotoProfilSiswa" alt="image" src="mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture" draggable="false">  <button type="button" class="btn btn-info btn-sm mb-0"  data-toggle="modal" data-target="#gantifoto">Upload Foto</button></center><br>
                             <form id="form-datadiri">
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">No Pendaftaran</label>

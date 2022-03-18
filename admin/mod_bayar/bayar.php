@@ -37,6 +37,8 @@
                         <button type="button" class="btn btn-icon icon-left btn btn-outline-warning" data-toggle="modal" data-target="#petugas_man" style="margin:20px;">
                             <i class="fas fa-cogs"></i> Setting Kuitansi
                         </button>
+                        <button type="button" class="btn btn-icon icon-left btn-outline-danger" id="hapus-semua-bayar">
+                        <i class="fas fa-trash-alt"></i> Hapus Semua</button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">

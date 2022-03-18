@@ -4,6 +4,8 @@
     <button type="button" class="btn btn-icon icon-left btn btn-outline-warning" data-toggle="modal" data-target="#setting_kartu" style="margin:20px;">
         <i class="fas fa-cogs"></i> Setting Kartu Ujian
     </button>
+    <button type="button" class="btn btn-icon icon-left btn-outline-danger" id="hapus-semua-kartu">
+    <i class="fas fa-trash-alt"></i> Hapus Semua Kartu</button>
 
     <!-- Modal Kartu Ujian -->
     <div class="modal fade" id="setting_kartu" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">

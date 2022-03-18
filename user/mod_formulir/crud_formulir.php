@@ -29,8 +29,8 @@ file_kk                    is  null
 if ($pg == 'simpandatadiri') {
     $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $id]);
     $status = $siswa['status'];
-    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG'];
-    if ($siswa['foto'] <> "foto_siswa/default.png") {
+    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'PNG'];
+    if ($siswa['foto'] <> "assets/img/avatar/default.png") {
         if ($status >= 1) {
             if ($_FILES['ijazah_akta']['name'] <> '') {
                 $logo = $_FILES['ijazah_akta']['name'];
@@ -162,7 +162,7 @@ if ($pg == 'simpanalamat') {
 if ($pg == 'simpanortu') {
     $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $id]);
     $status = $siswa['status'];
-    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG'];
+    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'PNG'];
     if ($_FILES['berkas_kk']['name'] <> '') {
         $logokk = $_FILES['berkas_kk']['name'];
         $tempkk = $_FILES['berkas_kk']['tmp_name'];
@@ -322,7 +322,7 @@ if ($pg == 'simpanasalsekolah') {
 if ($pg == 'simpaninfokartu') {
     $status = (isset($_POST['status'])) ? 1 : 0;
     $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $id]);
-    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG'];
+    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'PNG'];
     if ($_FILES['berkas_kartu']['name'] <> '') {
         $logo = $_FILES['berkas_kartu']['name'];
         $temp = $_FILES['berkas_kartu']['tmp_name'];
@@ -365,7 +365,7 @@ if ($pg == 'simpaninfokartu') {
 if ($pg == 'gantifoto') {
     $status = (isset($_POST['status'])) ? 1 : 0;
     $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $id]);
-    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG'];
+    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'PNG'];
     if ($_FILES['foto_siswa']['name'] <> '') {
         $logo = $_FILES['foto_siswa']['name'];
         $temp = $_FILES['foto_siswa']['tmp_name'];

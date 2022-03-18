@@ -82,6 +82,8 @@
                 </button>
                 <button type="button" class="btn btn-icon icon-left btn-danger" id="terima-semua">
                 <i class="fas fa-layer-group"></i> Terima Semua</button>
+                <button type="button" class="btn btn-icon icon-left btn-info" id="hapus-semua">
+                <i class="fas fa-trash-alt"></i> Hapus Semua</button>
                 </div>
             </div>
             <div class="card-body">
