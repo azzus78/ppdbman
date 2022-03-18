@@ -30,6 +30,13 @@
 
     gtag('config', 'UA-94034622-3');
   </script>
+  <style>
+  body  {
+    /* background-image: url("../assets/background-batik-png-hd-1.png"); */
+    background-image: url("https://drive.google.com/uc?export=view&id=1W9jwnPBxWUtv3Oy9lWav91VOjHb3h-Az");
+    background-color: #cccccc;
+  }
+</style>
   <!-- /END GA -->
 </head>
 <body>
@@ -39,7 +46,7 @@
         <div class="row">
           <div class="col-12 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
             <div class="login-brand" style="margin-bottom: 15px">
-              <img src="../<?= $setting['logo'] ?>" alt="logo" width="80" class="shadow-light rounded-circle">
+              <img src="../<?= $setting['logo'] ?>" alt="logo" width="85">
             </div>
 
             <div class="card card-primary">
@@ -94,7 +101,7 @@
               Don't have an account? <a href="auth-register.html">Create One</a>
             </div> -->
             <div class="simple-footer">
-            <marquee direction="left" scrollamount="3" style='color:#008000; ;' align="center" behavior="alternate"><h6> &copy;All Reserved | MAN 1 Nganjuk <?= date('Y') ?><h6></marquee>
+            <marquee direction="left" scrollamount="3" style='color:#008B8B; ;' align="center" behavior="alternate"><h6> &copy;All Reserved | MAN 1 Nganjuk <?= date('Y') ?><h6></marquee>
             </div>
           </div>
         </div>

@@ -9,7 +9,7 @@ require "config/functions.crud.php";
 <head>
 <style>
 body  {
-  background-image: url("../ppdb/assets/img/headernew.jpg");
+  background-image: url("https://drive.google.com/uc?export=view&id=1kp_yEtgFSHKOBPBNfJJTHc5OHK008SzY");
   background-color: #cccccc;
 }
 </style>
