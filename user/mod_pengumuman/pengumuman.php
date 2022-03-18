@@ -58,7 +58,7 @@
                                 </script>
                                 <!-- Buka Tes CBT PPDB -->
                                 <?php
-                                if ($setting_kartu_ujian['tanggal'] <= date('Y-m-d') && $setting_kartu_ujian['waktu_mulai'] <= date('H:i:s')) {
+                                if ($setting_kartu_ujian['tanggal'] <= date('Y-m-d') && $setting_kartu_ujian['waktu_mulai'] <= date('H:i:s') && $setting_kartu_ujian['waktu_selesai'] >= date('H:i:s')) {
                                 ?>
                                 <div class="col-sm-12 col-md-auto mb-2">
                                    <a onclick="myFunction()"><button type="button" class="btn btn-outline-warning">
