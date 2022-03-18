@@ -36,6 +36,30 @@ if ($pg == 'hapus') {
     $id_daftar = $_POST['id_daftar'];
     delete($koneksi, 'daftar', ['id_daftar' => $id_daftar]);
 }
+if ($pg == 'hapusSemua') {
+    $command = 'DELETE FROM bayar WHERE bayar.id_daftar IN (
+        SELECT daftar.id_daftar FROM daftar
+    )';
+    $exec = mysqli_query($koneksi, $command);
+    if (!$exec) {
+        return "NO";
+    }
+    $command = 'DELETE FROM kartu_ujian WHERE kartu_ujian.nisn IN (
+        SELECT daftar.nisn FROM daftar
+    )';
+    $exec = mysqli_query($koneksi, $command);
+    if (!$exec) {
+        return "NO";
+    }
+    $command = 'DELETE FROM prestasi WHERE prestasi.id_daftar IN (
+        SELECT daftar.id_daftar FROM daftar
+    )';
+    $exec = mysqli_query($koneksi, $command);
+    if (!$exec) {
+        return "NO";
+    }
+    delete($koneksi, 'daftar');
+}
 //membatalkan proses daftar ulang
 if ($pg == 'batal') {
 

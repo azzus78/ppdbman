@@ -92,7 +92,11 @@
 			$command .= ' WHERE '.substr($value,1);
 			$command = str_replace('#',' AND ',$command);
 		}
-        $exec = mysqli_num_rows(mysqli_query($koneksi, $command));
+        $result = mysqli_query($koneksi, $command);
+        $exec = 0;
+        if ($result) {
+            $exec = mysqli_num_rows($result);
+        }
         return $exec;
     }
     

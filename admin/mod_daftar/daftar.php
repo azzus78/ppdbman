@@ -359,6 +359,33 @@
             }
         })
     });
+
+    $('#hapus-semua').on('click', function() {
+        swal({
+            title: 'Apakah Anda Yakin?',
+            text: 'Akan menghapus keseluruhan dari data ini?!',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then((result) => {
+            if (result) {
+                $.ajax({
+                    url: 'mod_daftar/crud_daftar.php?pg=hapusSemua',
+                    method: "POST",
+                    success: function(data) {
+                        iziToast.error({
+                            title: 'Horee!',
+                            message: 'Data Berhasil dihapus',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+                    }
+                });
+            }
+        })
+    });
     $('#terima-semua').on('click', function() {
         var t_element = document.getElementsByClassName("hapus");
         var id = [];
