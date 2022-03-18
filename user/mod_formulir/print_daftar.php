@@ -271,10 +271,10 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
             </tbody>
         </table>
-        <h4>Data Nilai Rapor</h4>
         <?php if($siswa['jenis'] == "PR") {
             $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
         ?>
+        <h4>Data Nilai Rapor</h4>
         <table style="font-size: 12px" class="table table-bordered table-striped table-sm ">
             <tbody>
                 <tr>

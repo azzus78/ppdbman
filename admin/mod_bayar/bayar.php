@@ -10,7 +10,7 @@
                     <select class="form-control select2" style="width: 100%" name="id" required>
                         <option value="">Cari Data Pendaftar</option>
                         <?php
-                        $query = mysqli_query($koneksi, "SELECT no_daftar,id_daftar,nama FROM daftar where status in('0,1')");
+                        $query = mysqli_query($koneksi, "SELECT no_daftar,id_daftar,nama FROM daftar");
                         while ($siswa = mysqli_fetch_array($query)) {
                         ?>
                             <option value="<?= enkripsi($siswa['id_daftar']) ?>"><?= $siswa['no_daftar'] ?> <?= $siswa['nama'] ?></option>
@@ -37,8 +37,6 @@
                         <button type="button" class="btn btn-icon icon-left btn btn-outline-warning" data-toggle="modal" data-target="#petugas_man" style="margin:20px;">
                             <i class="fas fa-cogs"></i> Setting Kuitansi
                         </button>
-                        <button type="button" class="btn btn-icon icon-left btn-outline-danger" id="hapus-semua-bayar">
-                        <i class="fas fa-trash-alt"></i> Hapus Semua</button>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
