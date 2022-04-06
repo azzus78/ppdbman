@@ -150,19 +150,55 @@ tipe_prestasi       is null
                 </div>
                 <div class="author-box-details">
                     <ul class="nav nav-pills" id="myTab3" role="tablist">
+                        <?php
+                        $menuAktif = 1;
+
+                        if (($cek1 == 0 && $siswa['status'] >= 1) || ($cek1p == 0 && $siswa['status'] < 1)) {
+                            $menuAktif = 2;
+                        }
+                        if (($cek2 == 0 && $siswa['status'] >= 1) || ($cek2p == 0 && $siswa['status'] < 1)) {
+                            if ($siswa['status'] >= 1) {
+                                $menuAktif = 4;
+                            } else {
+                                $menuAktif = 1;
+                            }
+                        }
+                        if ($cek3 == 0) {
+                            $menuAktif = 4;
+                        }
+                        if ($cek6 == 0) {
+                            $menuAktif = 1;
+                        }
+                        ?>
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-user    "></i> Data Diri</a>
+                            <?php if ($menuAktif == 1) { ?>
+                                <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-user    "></i> Data Diri</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="false"><i class="fas fa-user    "></i> Data Diri</a>
+                            <?php } ?>
                         </li>
                         <?php if ($siswa['status'] >= 1) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php if ($menuAktif == 2) { ?>
+                                <a class="nav-link active" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="true"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } ?>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-user-friends    "></i> Orang Tua</a>
+                            <?php if ($menuAktif == 3) { ?>
+                                <a class="nav-link active" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="true"><i class="fas fa-user-friends    "></i> Orang Tua</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-user-friends    "></i> Orang Tua</a>
+                            <?php } ?>
                         </li>
                         <?php } else if ($siswa['status'] == 0) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-school    "></i> Asal Sekolah</a>
+                            <?php if ($menuAktif == 2) { ?>
+                                <a class="nav-link active" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="true"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } ?>
                         </li>
                         <?php } ?>
                         <!-- <li class="nav-item">
@@ -173,14 +209,23 @@ tipe_prestasi       is null
                         </li> -->
                         <?php
                         $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
-                        if ($siswa['jenis']  == $jenis['id_jenis']) { ?>
+                        if ($siswa['jenis'] == $jenis['id_jenis']) {
+                        ?>
                         <li class="nav-item">
-                            <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi</a>
+                            <?php if ($menuAktif == 4) { ?>
+                                <a class="nav-link active" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="true"><i class="fas fa-crown    "></i> Data Prestasi</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi</a>
+                            <?php } ?>
                         </li>
                         <?php } ?>
                     </ul>
                     <div class="tab-content" id="myTabContent2">
+                        <?php if ($menuAktif == 1) { ?>
                         <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+                        <?php } else { ?>
+                        <div class="tab-pane fade" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+                        <?php } ?>
                             <center><div><font color="#6495ED">Pasfoto Berseragam Ukuran 3X4</font></div> 
                                 <img id="fotoProfilSiswa" alt="image" src="mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture" draggable="false">  <button type="button" class="btn btn-info btn-sm mb-0"  data-toggle="modal" data-target="#gantifoto">Upload Foto</button></center><br>
                             <form id="form-datadiri">
@@ -354,7 +399,11 @@ tipe_prestasi       is null
                                 </div>
                             </form>
                         </div>
+                        <?php if ($menuAktif == 2) { ?>
+                        <div class="tab-pane fade show active" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+                        <?php } else { ?>
                         <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+                        <?php } ?>
                             <form id="form-alamat">
                                 <?php if ($siswa['status'] >= 1) { ?>
                                 <h5><i class="fas fa-home    "></i> Data Alamat</h5>
@@ -512,7 +561,11 @@ tipe_prestasi       is null
                                 </div>
                             </form>
                         </div>
+                        <?php if ($menuAktif == 3) { ?>
+                        <div class="tab-pane fade show active" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                        <?php } else { ?>
                         <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                        <?php } ?>
                             <form id="form-orangtua">
                                 <h5><i class="fas fa-user-check    "></i> Data Lengkap Ayah</h5>
                                 <div class="form-group row mb-2">
@@ -947,7 +1000,11 @@ tipe_prestasi       is null
                             </form>
                         </div> -->
                         <!-- / -->
+                        <?php if ($menuAktif == 4) { ?>
+                        <div class="tab-pane fade show active" id="prestasi3" role="tabpanel" aria-labelledby="prestasi-tab3">
+                        <?php } else { ?>
                         <div class="tab-pane fade" id="prestasi3" role="tabpanel" aria-labelledby="prestasi-tab3">
+                        <?php } ?>
                             <?php
                             $prestasi = fetch($koneksi, 'prestasi', ['id_daftar' => $siswa['id_daftar']]);
                             ?>
@@ -1299,7 +1356,7 @@ tipe_prestasi       is null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
-                        // location.reload();
+                        location.reload();
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1333,7 +1390,7 @@ tipe_prestasi       is null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
-
+                        location.reload();
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1364,7 +1421,7 @@ tipe_prestasi       is null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
-
+                        location.reload();
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1398,7 +1455,7 @@ tipe_prestasi       is null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
-
+                        location.reload();
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1432,6 +1489,7 @@ tipe_prestasi       is null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
+                        location.reload();
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1489,6 +1547,7 @@ tipe_prestasi       is null
                     setTimeout(function() {
                         window.location.reload();
                     }, 1000);
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
