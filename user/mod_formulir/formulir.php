@@ -15,7 +15,6 @@ agama              is  null
 "));
 $cek1 = mysqli_num_rows(mysqli_query($koneksi, "select * from daftar where
 id_daftar         = '$siswa[id_daftar]' and
-id_daftar         = '$siswa[id_daftar]' and
 anak_ke            is  null and
 saudara            is  null and
 tinggi             is  null and
@@ -134,10 +133,10 @@ file_kartu                    is  null
                         <?php
                         $menuAktif = 1;
 
-                        if (($cek1 == 0 && $siswa['status'] >= 1) || $cek1p == 0) {
+                        if (($cek1 == 0 && $siswa['status'] >= 1) || ($cek1p == 0 && $siswa['status'] < 1)) {
                             $menuAktif = 2;
                         }
-                        if (($cek2 == 0 && $siswa['status'] >= 1) || $cek2p == 0) {
+                        if (($cek2 == 0 && $siswa['status'] >= 1) || ($cek2p == 0 && $siswa['status'] < 1)) {
                             if ($siswa['status'] >= 1) {
                                 $menuAktif = 3;
                             } else {
