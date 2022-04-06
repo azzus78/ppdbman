@@ -193,7 +193,11 @@ file_kartu                    is  null
                         </li>
                         <?php } ?> -->
                     </ul><div class="tab-content" id="myTabContent2">
+                        <?php if ($menuAktif == 1) { ?>
                         <div class="tab-pane fade show active" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+                        <?php } else { ?>
+                        <div class="tab-pane fade" id="home3" role="tabpanel" aria-labelledby="home-tab3">
+                        <?php } ?>
                             <center><div><font color="#6495ED">Pasfoto Berseragam Ukuran 3X4</font></div> 
                                 <img id="fotoProfilSiswa" alt="image" src="mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture" draggable="false">  <button type="button" class="btn btn-info btn-sm mb-0"  data-toggle="modal" data-target="#gantifoto">Upload Foto</button></center><br>
                             <form id="form-datadiri">
@@ -369,7 +373,11 @@ file_kartu                    is  null
                                 </div>
                             </form>
                         </div>
+                        <?php if ($menuAktif == 2) { ?>
+                        <div class="tab-pane fade show active" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+                        <?php } else { ?>
                         <div class="tab-pane fade" id="contact3" role="tabpanel" aria-labelledby="contact-tab3">
+                        <?php } ?>
                             <form id="form-alamat">
                                 <?php if ($siswa['status'] >= 1) { ?>
                                 <h5><i class="fas fa-home    "></i> Data Alamat</h5>
@@ -527,7 +535,11 @@ file_kartu                    is  null
                                 </div>
                             </form>
                         </div>
+                        <?php if ($menuAktif == 3) { ?>
+                        <div class="tab-pane fade show active" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                        <?php } else { ?>
                         <div class="tab-pane fade" id="profile3" role="tabpanel" aria-labelledby="profile-tab3">
+                        <?php } ?>
                             <form id="form-orangtua">
                                 <h5><i class="fas fa-user-check    "></i> Data Lengkap Ayah</h5>
                                 <div class="form-group row mb-2">
