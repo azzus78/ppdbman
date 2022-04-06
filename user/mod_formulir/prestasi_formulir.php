@@ -158,9 +158,9 @@ tipe_prestasi       is null
                         }
                         if (($cek2 == 0 && $siswa['status'] >= 1) || ($cek2p == 0 && $siswa['status'] < 1)) {
                             if ($siswa['status'] >= 1) {
-                                $menuAktif = 4;
+                                $menuAktif = 3;
                             } else {
-                                $menuAktif = 1;
+                                $menuAktif = 4;
                             }
                         }
                         if ($cek3 == 0) {
