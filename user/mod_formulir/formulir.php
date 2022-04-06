@@ -1090,7 +1090,6 @@ file_kartu                    is  null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
-                        // location.reload();
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1098,6 +1097,7 @@ file_kartu                    is  null
                             position: 'topCenter'
                         });
                     }
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
@@ -1124,7 +1124,6 @@ file_kartu                    is  null
                             message: 'Data berhasil disimpan',
                             position: 'topCenter'
                         });
-
                     } else {
                         iziToast.error({
                             title: 'Maaf!',
@@ -1132,6 +1131,7 @@ file_kartu                    is  null
                             position: 'topCenter'
                         });
                     }
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
@@ -1163,6 +1163,7 @@ file_kartu                    is  null
                             position: 'topCenter'
                         });
                     }
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
@@ -1197,6 +1198,7 @@ file_kartu                    is  null
                             position: 'topCenter'
                         });
                     }
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
@@ -1230,6 +1232,7 @@ file_kartu                    is  null
                             position: 'topCenter'
                         });
                     }
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
@@ -1280,6 +1283,7 @@ file_kartu                    is  null
                     setTimeout(function() {
                         window.location.reload();
                     }, 1000);
+                    location.reload();
                     //$('#bodyreset').load(location.href + ' #bodyreset');
                 }
             });
