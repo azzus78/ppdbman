@@ -27,7 +27,7 @@ require "config/functions.crud.php";
                     </div>
                     <div class="form-group">
                         <label  for="nisn">NISN<font color="red">*</font> (Klik disini untuk <a target="_blank" href="https://nisn.data.kemdikbud.go.id/">Cek NISN </a>)</label>
-                        <input type="number" maxlength="10" minlength="5" class="form-control" name="nisn" placeholder="NISN" autocomplete="off" required>
+                        <input type="text" pattern="([0-9]{10})" maxlength="10" minlength="5" id="inputNisn" class="form-control" name="nisn" placeholder="NISN" autocomplete="off" required>
                     </div>
                     <div class="form-group">
                         <label for="nama">NAMA LENGKAP<font color="red">*</font></label>
@@ -93,6 +93,11 @@ require "config/functions.crud.php";
     }
 </script>
 <script>
+    $(document).ready(function() {
+        $("#inputNisn").keyup(function() {
+            $("#inputNisn").val(this.value.match(/[0-9]*/));
+        });
+    })
     $('#form-daftar').submit(function(e) {
         e.preventDefault();
         $.ajax({
