@@ -131,19 +131,48 @@ file_kartu                    is  null
                 </div>
                 <div class="author-box-details">
                     <ul class="nav nav-pills" id="myTab3" role="tablist">
+                        <?php
+                        $menuAktif = 1;
+
+                        if (($cek1 == 0 && $siswa['status'] >= 1) || $cek1p == 0) {
+                            $menuAktif = 2;
+                        }
+                        if (($cek2 == 0 && $siswa['status'] >= 1) || $cek2p == 0) {
+                            $menuAktif = 3;
+                        }
+                        if ($cek3 == 0) {
+                            $menuAktif = 1;
+                        }
+                        ?>
                         <li class="nav-item">
-                            <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-user    "></i> Data Diri</a>
+                            <?php if ($menuAktif == 1) { ?>
+                                <a class="nav-link active" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-user    "></i> Data Diri</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="home-tab3" data-toggle="tab" href="#home3" role="tab" aria-controls="home" aria-selected="false"><i class="fas fa-user    "></i> Data Diri</a>
+                            <?php } ?>
                         </li>
                         <?php if ($siswa['status'] >= 1) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php if ($menuAktif == 2) { ?>
+                                <a class="nav-link active" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="true"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } ?>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-user-friends    "></i> Orang Tua</a>
+                            <?php if ($menuAktif == 3) { ?>
+                                <a class="nav-link active" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="true"><i class="fas fa-user-friends    "></i> Orang Tua</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="profile-tab3" data-toggle="tab" href="#profile3" role="tab" aria-controls="profile" aria-selected="false"><i class="fas fa-user-friends    "></i> Orang Tua</a>
+                            <?php } ?>
                         </li>
                         <?php } else if ($siswa['status'] == 0) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-school    "></i> Asal Sekolah</a>
+                            <?php if ($menuAktif == 2) { ?>
+                                <a class="nav-link active" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="true"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } else { ?>
+                                <a class="nav-link" id="contact-tab3" data-toggle="tab" href="#contact3" role="tab" aria-controls="contact" aria-selected="false"><i class="fas fa-home    "></i> Alamat &amp; Sekolah</a>
+                            <?php } ?>
                         </li>
                         <?php } ?>
                         <!-- <li class="nav-item">
