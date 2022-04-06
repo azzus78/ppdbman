@@ -138,7 +138,11 @@ file_kartu                    is  null
                             $menuAktif = 2;
                         }
                         if (($cek2 == 0 && $siswa['status'] >= 1) || $cek2p == 0) {
-                            $menuAktif = 3;
+                            if ($siswa['status'] >= 1) {
+                                $menuAktif = 3;
+                            } else {
+                                $menuAktif = 1;
+                            }
                         }
                         if ($cek3 == 0) {
                             $menuAktif = 1;
