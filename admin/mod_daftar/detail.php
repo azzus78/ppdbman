@@ -30,42 +30,13 @@ while ($keter=mysqli_fetch_array($query)) {
             <div class="card-header">
                 <h4>Data Pendaftar</h4>
                 <div class="card-header-action">
-                    <a target="_blank" href="mod_daftar/print_daftar.php?id=<?= $_GET['id'] ?>" type="button" class="btn btn-success"><i class="fas fa-print"></i> Cetak Form</a>
+                    <a target="_blank" href="mod_daftar/print_daftar.php?id=<?= $_GET['id'] ?>" type="button" class="btn btn-success"><i class="fas fa-print    "></i> Cetak Form</a>
                 </div>
             </div>
             <div class="card-body">
                 <div class="author-box-left">
-                    <img class="rounded-circle author-box-picture" id="myImg" src="../user/mod_formulir/<?= $siswa['foto'] ?>" alt="<?= $siswa['nama'] ?>">
-                    <!-- <img alt="image" src="../user/mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture"> -->
+                    <img alt="image" src="../user/mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture">
                     <div class="clearfix"></div>
-                    <!-- The Modal Image-->
-                    <div id="myModal" class="modal">
-                    <span class="close">&times;</span>
-                    <img class="modal-content" id="img01">
-                    <div id="caption"></div>
-                    </div>
-                    <script>
-                        // Get the modal
-                        var modal = document.getElementById("myModal");
-
-                        // Get the image and insert it inside the modal - use its "alt" text as a caption
-                        var img = document.getElementById("myImg");
-                        var modalImg = document.getElementById("img01");
-                        var captionText = document.getElementById("caption");
-                        img.onclick = function(){
-                        modal.style.display = "block";
-                        modalImg.src = this.src;
-                        captionText.innerHTML = this.alt;
-                        }
-
-                        // Get the <span> element that closes the modal
-                        var span = document.getElementsByClassName("close")[0];
-
-                        // When the user clicks on <span> (x), close the modal
-                        span.onclick = function() { 
-                        modal.style.display = "none";
-                        }
-                    </script>
                     <br>
                     <div class="author-box-job">Status Pendaftaran</div>
                     <?php if ($siswa['status'] == 1) { ?>
