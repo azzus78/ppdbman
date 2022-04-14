@@ -35,8 +35,38 @@ while ($keter=mysqli_fetch_array($query)) {
             </div>
             <div class="card-body">
                 <div class="author-box-left">
-                    <img alt="image" src="../user/mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture">
+                    <img id="myImg" class="rounded-circle author-box-picture" src="../user/mod_formulir/<?= $siswa['foto'] ?>">
+                    <!-- <img alt="image" src="../user/mod_formulir/<?= $siswa['foto'] ?>" class="rounded-circle author-box-picture"> -->
                     <div class="clearfix"></div>
+                    <!-- The Modal -->
+                    <div id="myModal" class="dtlmdl">
+                    <img class="mdlcntn" id="img01"><br>
+                    <button class="cls btn btn-outline-secondary">Close</button>
+                    <div id="caption"></div>
+                    </div>
+
+                    <script>
+                        // Get the modal
+                        var modal = document.getElementById("myModal");
+
+                        // Get the image and insert it inside the modal - use its "alt" text as a caption
+                        var img = document.getElementById("myImg");
+                        var modalImg = document.getElementById("img01");
+                        var captionText = document.getElementById("caption");
+                        img.onclick = function(){
+                        modal.style.display = "block";
+                        modalImg.src = this.src;
+                        captionText.innerHTML = this.alt;
+                        }
+
+                        // Get the <span> element that closes the modal
+                        var button = document.getElementsByClassName("cls")[0];
+
+                        // When the user clicks on <span> (x), close the modal
+                        button.onclick = function() { 
+                        modal.style.display = "none";
+                        }
+                    </script>
                     <br>
                     <div class="author-box-job">Status Pendaftaran</div>
                     <?php if ($siswa['status'] == 1) { ?>
