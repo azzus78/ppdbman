@@ -106,7 +106,7 @@ tipe_prestasi       is null
                 <h4>Isi Formulir Prestasi dibawah</h4>
                 <?php if ($cek1 == 0 && $cek2 == 0 && $cek3 == 0 && $cek6 == 0) { ?>
                 <div class="card-header-action">
-                    <a target="_blank" href="mod_formulir/print_daftar.php?id=<?= enkripsi($siswa['id_daftar']) ?>" type="button" class="btn btn-success"><i class="fas fa-print    "></i> Cetak Form</a>
+                    <a target="_blank" href="mod_formulir/print_daftar.php?id=<?= enkripsi($siswa['id_daftar']) ?>" type="button" class="btn btn-success"><i class="fas fa-print    "></i> Cetak Formulir</a>
                 </div>
                 <?php } ?>
             </div>

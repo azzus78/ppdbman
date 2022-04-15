@@ -383,7 +383,7 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
             </tbody>
         </table>
-        <!-- <?php $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
+        <?php $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
         if ($siswa['jenis']  == $jenis['id_jenis']) { ?>
         <h4 style="page-break-before: always;">Bukti Prestasi</h4>
         <table style="font-size: 12px" class="table table-sm">
@@ -393,7 +393,7 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
             </tbody>
         </table>
-        <?php } ?> -->
+        <?php } ?>
     </div>
 </body>
 
@@ -409,6 +409,6 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-$dompdf->stream("dompdf_out.pdf", array("Attachment" => false));
+$dompdf->stream("Formulir_Pendaftaran.pdf", array("Attachment" => false));
 exit(0);
 ?>

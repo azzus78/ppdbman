@@ -30,8 +30,11 @@ while ($keter=mysqli_fetch_array($query)) {
             <div class="card-header">
                 <h4>Data Pendaftar</h4>
                 <div class="card-header-action">
-                    <a target="_blank" href="mod_daftar/print_daftar.php?id=<?= $_GET['id'] ?>" type="button" class="btn btn-success"><i class="fas fa-print    "></i> Cetak Form</a>
+                    <a target="_blank" href="mod_daftar/print_daftar.php?id=<?= $_GET['id'] ?>" type="button" class="btn btn-success"><i class="fas fa-print    "></i> Cetak Formulir</a>
                 </div>
+                <a href="?pg=daftar"><button type="button" class="btn btn-warning" style="margin-left: 5px;">Kembali
+                    <i class="fas fa-backward"></i>
+                </button></a>
             </div>
             <div class="card-body">
                 <div class="author-box-left">

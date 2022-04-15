@@ -21,6 +21,7 @@ while ($keter=mysqli_fetch_array($query)) {
         $keterampilan = $keter['nama_keterampilan'];
     }
 }
+$logoman = fetch($koneksi, 'setting');
 
 ?>
 <!DOCTYPE html>

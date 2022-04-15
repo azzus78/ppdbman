@@ -29,7 +29,7 @@ file_kk                    is  null
 if ($pg == 'simpandatadiri') {
     $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $id]);
     $status = $siswa['status'];
-    $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'PNG'];
+    $ektensi = ['jpg', 'png', 'jpeg'];
     if ($siswa['foto'] <> "assets/img/avatar/default.png") {
         if ($status >= 1) {
             if ($_FILES['ijazah_akta']['name'] <> '') {

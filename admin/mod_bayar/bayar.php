@@ -53,6 +53,7 @@
                                         <th>Tgl Bayar</th>
                                         <th>Penerima</th>
                                         <th>verifikasi</th>
+                                        <th>Status</th>
                                         <th>Bukti</th>
                                         <th>Action</th>
                                     </tr>
@@ -284,6 +285,33 @@
                                     </tr>
                                 <?php }
                                 ?>
+                            </tbody>
+                        </table>
+                        <?php
+                        $bayar = mysqli_fetch_array(mysqli_query($koneksi, "select sum(jumlah) as total from bayar where id_daftar='$siswa[id_daftar]'"));
+                        $sisa = $total['total'] - $bayar['total'];
+                        $sisa *= -1;
+                        ?>
+                        <table class="table table-sm table-striped mt-4" style="font-size:15px">
+                            <tbody>
+                                <tr>
+                                    <th scope="row" width="200">TOTAL PEMBAYARAN</th>
+                                    <td><?= "Rp " . number_format($bayar['total'], 0, ",", ".") ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">SISA BAYAR</th>
+                                    <td><?= "Rp " . number_format($sisa, 0, ",", ".") ?></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">STATUS</th>
+                                    <td>
+                                        <?php if ($sisa >= 0) { ?>
+                                            <span class="badge badge-success">SUDAH LUNAS</span>
+                                        <?php } else { ?>
+                                            <span class="badge badge-danger">BELUM LUNAS</span>
+                                        <?php } ?>
+                                    </td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
