@@ -152,7 +152,7 @@ body  {
             <div class="main-content">
                 <section class="section">
                     <div class="section-header">
-                        <h1>AYO SEGERA DAFTAR KUOTA TERBATAS !</h1>
+                        <h1>AYO SEGERA DAFTAR KUOTA SANGAT TERBATAS !</h1>
                         <div class="section-header-breadcrumb">
                             <button id="btndaftar" data-id="pendaftaran" type="button" class="klikmenu btn btn-danger animated infinite pulse delay-2s">DAFTAR AKUN</button> &nbsp;
                             <button id="btnmasuk" data-id="login" type="button" class="klikmenu btn btn-primary animated infinite pulse delay-2s">LOGIN</button>
