@@ -602,7 +602,7 @@ tipe_prestasi       is null
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Pendidikan</label>
                                     <div class="col-sm-12 col-md-7">
                                         <select class='form-control' name='pendidikan_ayah' required>
-                                            <option value=''>Pilih Penghasilan</option>";
+                                            <option value=''>Pilih Pendidikan</option>";
                                             <?php foreach ($pendidikan as $val) { ?>
                                                 <?php if ($siswa['pendidikan_ayah'] == $val) { ?>
                                                     <option value='<?= $val ?>' selected><?= $val ?> </option>
