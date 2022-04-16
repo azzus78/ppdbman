@@ -53,8 +53,7 @@
                                         <th>Tgl Bayar</th>
                                         <th>Penerima</th>
                                         <th>verifikasi</th>
-                                        <th>Status</th>
-                                        <th>Bukti</th>
+                                        <th>Bukti Bayar</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -93,8 +92,8 @@
                                                 <?php }  ?>
                                             </td>
                                             <td>
-                                                <button data-id="<?= $bayar['id_bayar'] ?>" class="cek btn btn-success btn-sm"><i class="fas fa-check-circle    "></i></button>
-                                                <button data-id="<?= $bayar['id_bayar'] ?>" class="hapus btn btn-danger btn-sm"><i class="fas fa-trash-alt    "></i></button>
+                                                <button data-id="<?= $bayar['id_bayar'] ?>" class="cek btn btn-success btn-sm"><i class="fas fa-check-circle"></i></button>
+                                                <!-- <button data-id="<?= $bayar['id_bayar'] ?>" class="hapus btn btn-danger btn-sm"><i class="fas fa-trash"></i></button> -->
                                             </td>
                                         </tr>
                                     <?php }
@@ -130,7 +129,7 @@
                                         <th>Tgl Bayar</th>
                                         <th>Penerima</th>
                                         <th>verifikasi</th>
-                                        <th>Bukti</th>
+                                        <th>Bukti Bayar</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -240,13 +239,15 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">
-                                        #
+                                    #
                                     </th>
                                     <th>Kode Transaksi</th>
                                     <th>Nama Siswa</th>
+                                    <th>Jenis Kelamin</th>
                                     <th>Jumlah Bayar</th>
                                     <th>Tgl Bayar</th>
                                     <th>Petugas</th>
+                                    <th>Bukti Bayar</th>
                                     <th>verifikasi</th>
                                     <th>Action</th>
                                 </tr>
@@ -263,6 +264,7 @@
                                         <td><?= $no; ?></td>
                                         <td><?= $bayar['id_bayar'] ?></td>
                                         <td><?= $bayar['nama'] ?></td>
+                                        <td><?= $bayar['jenkel'] ?></td>
                                         <td><?= "Rp " . number_format($bayar['jumlah'], 0, ",", ".") ?></td>
                                         <td><?= $bayar['tgl_bayar'] ?></td>
                                         <td><?php if ($user) {
@@ -270,6 +272,11 @@
                                             } else {
                                                 echo "Online";
                                             } ?></td>
+                                        <td>
+                                            <?php if ($bayar['bukti'] <> null) { ?>
+                                                <a target="_blank" href="../user/mod_bayar/<?= $bayar['bukti'] ?>" class="badge badge-info"><i class="fas fa-eye"></i></a>
+                                            <?php }  ?>
+                                        </td>
                                         <td>
                                             <?php if ($bayar['verifikasi'] == 1) { ?>
                                                 <span class="badge badge-success">Sudah Dicek</span>
@@ -285,18 +292,14 @@
                                     </tr>
                                 <?php }
                                 ?>
-                            </tbody>
-                        </table>
-                        <?php
-                        $bayar = mysqli_fetch_array(mysqli_query($koneksi, "select sum(jumlah) as total from bayar where id_daftar='$siswa[id_daftar]'"));
-                        $query = mysqli_query($koneksi, 
-                            "select sum(jumlah) as total from biaya where jenkel='".$siswa['jenkel']."' or jenkel='S'");
-                        $total = mysqli_fetch_array($query);
-                        $sisa = $total['total'] - $bayar['total'];
-                        $sisa *= -1;
-                        ?>
-                        <table class="table table-sm table-striped mt-4" style="font-size:15px">
-                            <tbody>
+                                <?php
+                                $bayar = mysqli_fetch_array(mysqli_query($koneksi, "select sum(jumlah) as total from bayar where id_daftar='$siswa[id_daftar]'"));
+                                $query = mysqli_query($koneksi, 
+                                    "select sum(jumlah) as total from biaya where jenkel='".$siswa['jenkel']."' or jenkel='S'");
+                                $total = mysqli_fetch_array($query);
+                                $sisa = $total['total'] - $bayar['total'];
+                                $sisa *= -1;
+                                ?>
                                 <tr>
                                     <th scope="row" width="200">TOTAL PEMBAYARAN</th>
                                     <td><?= "Rp " . number_format($bayar['total'], 0, ",", ".") ?></td>
