@@ -165,7 +165,7 @@ tipe_prestasi       is null
                         if ($cek3 == 0) {
                             $menuAktif = 4;
                         }
-                        if (($cek6 == 0 && $siswa['status'] < 1) || ($cek1 && $cek2 && $cek3 && $cek6)) {
+                        if (($cek6 == 0 && $siswa['status'] < 1) || ($cek1 == 0 && $cek2 == 0 && $cek3 == 0 && $cek6 == 0)) {
                             $menuAktif = 1;
                         }
                         ?>
