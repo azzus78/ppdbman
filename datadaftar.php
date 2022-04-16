@@ -15,7 +15,6 @@ require "config/functions.crud.php";
                         <th>No Pendaftaran</th>
                         <th>Nama Pendaftar</th>
                         <th>Asal Sekolah</th>
-
                         <th>Status</th>
 
                     </tr>

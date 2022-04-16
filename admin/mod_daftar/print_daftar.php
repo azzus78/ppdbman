@@ -383,13 +383,15 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
             </tbody>
         </table>
-        <?php $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
+        <?php
+        $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
+        $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
         if ($siswa['jenis']  == $jenis['id_jenis']) { ?>
         <h4 style="page-break-before: always;">Bukti Prestasi</h4>
         <table style="font-size: 12px" class="table table-sm">
             <tbody>
                 <tr>
-                    <td class="text-center"><img src="../../user/mod_formulir/<?= $siswa['file_prestasi'] ?>" width="600"></td>
+                    <td class="text-center"><img src="../../user/mod_formulir/<?= $datapres['file_prestasi'] ?>" width="600"></td>
                 </tr>
             </tbody>
         </table>
