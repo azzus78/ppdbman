@@ -289,6 +289,9 @@
                         </table>
                         <?php
                         $bayar = mysqli_fetch_array(mysqli_query($koneksi, "select sum(jumlah) as total from bayar where id_daftar='$siswa[id_daftar]'"));
+                        $query = mysqli_query($koneksi, 
+                            "select sum(jumlah) as total from biaya where jenkel='".$siswa['jenkel']."' or jenkel='S'");
+                        $total = mysqli_fetch_array($query);
                         $sisa = $total['total'] - $bayar['total'];
                         $sisa *= -1;
                         ?>
