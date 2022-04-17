@@ -62,12 +62,12 @@
                                 ?>
                                 <div class="col-sm-12 col-md-auto mb-2">
                                    <a onclick="myFunction()"><button type="button" class="btn btn-outline-warning">
-                                    <i class="fas fa-chalkboard-teacher"></i> TES PPDB </button></a>
+                                    <i class="fas fa-chalkboard-teacher"></i> Tes Penempatan </button></a>
                                 </div>
                                 <?php } else { ?>
                                 <div class="col-sm-12 col-md-auto mb-2">
                                    <a><button type="button" class="btn btn-outline-warning disabled">
-                                    <i class="fas fa-chalkboard-teacher"></i> TES PPDB </button></a>
+                                    <i class="fas fa-chalkboard-teacher"></i> Tes Penempatan </button></a>
                                 </div>
                                 <?php } ?>
                                 <script>
