@@ -94,7 +94,7 @@ while ($keter=mysqli_fetch_array($query)) {
                         </li>
                         <?php if ($prestasi) { ?>
                         <li class="nav-item">
-                            <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi</a>
+                            <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi & Tahfidz</a>
                         </li>
                         <?php } ?>
                         <li class="nav-item">
@@ -359,9 +359,9 @@ while ($keter=mysqli_fetch_array($query)) {
                                 <table class="table table-striped table-sm ">
                                     <tbody>
                                         <tr>
-                                            <td align="center" colspan="2"><i class="fas fa-crown"></i> <b>Data Prestasi</b></td>
+                                            <td align="center" colspan="2"><i class="fas fa-crown"></i> <b>Data Prestasi & Tahfidz</b></td>
                                         </tr>
-                                        <tr>
+                                        <!-- <tr>
                                         <td align="center" colspan="2"><i class="fas fa-archive text-warning"></i><font color="green"> <b>NILAI SEMESTER 3</b></font></td>
                                         </tr>
                                         <tr>
@@ -444,6 +444,10 @@ while ($keter=mysqli_fetch_array($query)) {
                                             <td align="right"><b><font color="green">TOTAL </b></font></td>
                                             <?php $totalsmt5 = $datapres['mat5'] + $datapres['bin5'] + $datapres['bing5'] + $datapres['ipa5'] + $datapres['ips5']; ?>
                                             <td align="left"><b><font color="green"><?= $totalsmt5 ?></b></font></td>
+                                        </tr> -->
+                                        <tr>
+                                            <td align="right"><b>Sudah Hafal Berapa Juz</b></td>
+                                            <td align="left"><?= $datapres['hafaljus'] ?></td>
                                         </tr>
                                         <tr>
                                             <td align="right"><b>Prestasi</b></td>
@@ -497,11 +501,16 @@ while ($keter=mysqli_fetch_array($query)) {
                                         <!-- / -->
                                         <?php if ($prestasi) { ?>
                                         <tr>
-                                            <td align="center" colspan="2"><i class="fas fa-address-card"></i> <b>Bukti Prestasi</b>
+                                            <td align="center" colspan="2"><i class="fas fa-address-card"></i> <b>Berkas Prestasi</b>
                                                 <a href="../user/mod_formulir/<?= $datapres['file_prestasi'] ?>" target="_blank"><button type="button" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button></a>
                                             </td>
                                         </tr>
                                         <?php } ?>
+                                        <tr>
+                                            <td align="center" colspan="2"><i class="fas fa-address-card"></i> <b>Berkas Tahfidz</b>
+                                                <a href="../user/mod_formulir/<?= $datapres['file_tahfidz'] ?>" target="_blank"><button type="button" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button></a>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

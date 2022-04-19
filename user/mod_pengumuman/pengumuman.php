@@ -63,7 +63,7 @@
                                 </script>
                                 <script>
                                     function myFunctiondownload() {
-                                    window.open("");
+                                    window.open("<?php echo $setting_kartu_ujian['filebook']; ?>");
                                     }
                                 </script>
                                 <!-- Buka Tes CBT PPDB -->

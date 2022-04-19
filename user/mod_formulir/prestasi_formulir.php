@@ -129,7 +129,7 @@ tipe_prestasi       is null
                                         <div class="mb-2"><img alt="image" id="foto-profil-preview" src="mod_formulir/<?= $siswa['foto'] ?>" class="author-box-picture img-thumbnail" style="width: 200px;" draggable="false"></div>
                                         <div class="form-group text-left">
                                             <input type="file" class="form-control-file" id="foto_siswa" name="foto_siswa" accept="image/*" aria-describedby="file-foto-siswa" onchange="previewImage();" required>
-                                            <small id="file-foto-siswa" class="form-text text-muted">Upload file JPG/PNG (Maks 1 MB)</small>
+                                            <small id="file-foto-siswa" class="form-text text-muted">Upload file jpg/jpeg (Maks 1 MB)</small>
                                         </div>
                                     </div>
                                     <div class="modal-footer">
@@ -390,7 +390,7 @@ tipe_prestasi       is null
                                         <div>
                                             <label for="ijazah_akta">Upload Berkas Ijazah/Akte Lahir</label>
                                             <input type="file" class="form-control-file" id="ijazah_akta" name="ijazah_akta" accept="image/*" aria-describedby="file-ijazah-akta" required>
-                                            <small id="file-ijazah-akta" class="form-text text-muted">Upload file JPG/PNG (Maks 2 Mb)</small>
+                                            <small id="file-ijazah-akta" class="form-text text-muted">Upload file jpg/jpeg (Maks 2 Mb)</small>
                                         </div>
                                     </form>
                                     <?php } ?>
@@ -735,7 +735,7 @@ tipe_prestasi       is null
                                         <?php } else { ?>
                                         <input type="file" class="form-control-file" id="berkas_kk" name="berkas_kk" accept="image/*" aria-describedby="file-berkas-kk" required>
                                         <?php } ?>
-                                        <small id="file-berkas-kk" class="form-text text-muted">Upload file JPG/PNG (Maks 2 Mb)</small>
+                                        <small id="file-berkas-kk" class="form-text text-muted">Upload file jpg/jpeg (Maks 2 Mb)</small>
                                     </div>
                                 </div>
                                 <!-- tempat wali -->
@@ -874,7 +874,7 @@ tipe_prestasi       is null
                                         <div>
                                             <label for="berkas_kartu">Upload Scan Kartu (Opsional)</label>
                                             <input type="file" class="form-control-file" id="berkas_kartu" name="berkas_kartu" accept="image/*" aria-describedby="file-berkas-kartu">
-                                            <small id="file-berkas-kk" class="form-text text-muted">Upload file JPG/PNG (Maks 2 Mb)</small>
+                                            <small id="file-berkas-kk" class="form-text text-muted">Upload file jpg/jpeg (Maks 2 Mb)</small>
                                         </div>
                                     </form>
                                     <center><button type="submit" class="btn btn-primary btn-lg mt-2">Simpan Data Orang Tua dan Kartu</button></center>
@@ -1201,7 +1201,7 @@ tipe_prestasi       is null
                                         <div id="uploadPrestasi" hidden>
                                             <label for="berkas_prestasi">Upload Bukti Prestasi <font color="red">Akademik/Non Akademik</font></label>
                                             <input type="file" class="form-control-file" id="berkas_prestasi" name="berkas_prestasi" accept="image/*,application/pdf" aria-describedby="file-berkas-prestasi">
-                                            <small id="file-berkas-prestasi" class="form-text text-muted">Upload file PDF/JPG/PNG (Maks 2 Mb)</small>
+                                            <small id="file-berkas-prestasi" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
                                         </div>
                                     </form>
                                     <center><button type="submit" class="btn btn-primary btn-lg mt-2">Simpan Data Prestasi</button></center>

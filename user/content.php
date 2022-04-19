@@ -23,6 +23,8 @@ if ($pg == '') {
     include "mod_setting/setting.php";
 } elseif ($pg == 'tahfidz_formulir') {
     include "mod_formulir/tahfidz_formulir.php";
+} elseif ($pg == 'guide_book') {
+    include "mod_pengumuman/guide_book.php";
 }
 
 
