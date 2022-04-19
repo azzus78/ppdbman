@@ -21,4 +21,8 @@ if ($pg == '') {
     include "mod_user/user.php";
 } elseif ($pg == 'setting') {
     include "mod_setting/setting.php";
+} elseif ($pg == 'tahfidz_formulir') {
+    include "mod_formulir/tahfidz_formulir.php";
 }
+
+

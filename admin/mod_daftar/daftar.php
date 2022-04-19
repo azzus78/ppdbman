@@ -61,6 +61,9 @@
                     <button type="button" class="btn btn-outline-warning" id="listReguler">
                         <i class="fas fa-assistive-listening-systems"></i> Data Reguler
                     </button>
+                    <button type="button" class="btn btn-outline-danger" id="listTahfidz">
+                        <i class="fas fa-quran"></i> Data Tahfidz
+                    </button>
                 </div>
             </div>
             <div class="card-header">
@@ -158,6 +161,7 @@
                                             <span class="badge badge-info">Prestasi</span>
                                         <?php } else { ?>
                                             <span class="badge badge-warning">Reguler </span>
+                                            <!-- <span class="badge badge-danger">Tahfidz </span> -->
                                         <?php } ?>
                                     </td>
                                     <td>
@@ -212,6 +216,11 @@
                                                                         <span class="custom-switch-description">Pindahkan Prestasi</span>
                                                                     </label>
                                                                     <?php } ?>
+                                                                    <label class="custom-switch">
+                                                                        <input type="radio" name="status" value="5" class="custom-switch-input">
+                                                                        <span class="custom-switch-indicator"></span>
+                                                                        <span class="custom-switch-description">Pindahkan Tahfidz</span>
+                                                                    </label>
                                                                 </div>
                                                             </div>
                                                         </div>
