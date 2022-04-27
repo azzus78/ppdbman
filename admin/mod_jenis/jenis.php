@@ -28,9 +28,12 @@
                         </div>
                         <form>
                             <div class="form-group">
-                                <label for="exampleFormControlFile1">Upload File Guide Book Siswa</label>
-                                <input type="file" class="form-control-file" id="exampleFormControlFile1">
-                                <label for="exampleFormControlFile1">File PDF</label>
+                                <label for="exampleFormControlFile1">Upload File Jadwal Pelaksanaan</label>
+                                <input type="file" class="form-control-file" id="jadwalppdb">
+                                <label for="exampleFormControlFile1">File PDF</label><br>
+                                <label for="exampleFormControlFile2">Upload File Alur Daftar Ulang</label>
+                                <input type="file" class="form-control-file" id="alurdaful">
+                                <label for="exampleFormControlFile2">File PDF</label>
                             </div>
                         </form>
 

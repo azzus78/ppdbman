@@ -1,7 +1,7 @@
 <ul class="sidebar-menu">
     <li class="menu-header">Main Menu</li>
     <li><a class="nav-link" href="."><i class="fas fa-home fa-fw"></i> <span>Beranda</span></a></li>
-
+    <li><a class="nav-link" href="?pg=guide_book"><i class="fas fa-cloud-meatball"></i> <span>Petunjuk</span></a></li>
     <?php if ($prestasi) { ?>
     <li><a class="nav-link" href="?pg=prestasi_formulir"><i class="far fa-address-book"></i> <span>Formulir</span></a></li>
     <?php } else { ?>
