@@ -9,7 +9,7 @@
                         <i class="fas fa-bullhorn"></i>
                         </div>
                         <div class="activity-detail">
-                            <h5>INFO PPDB MAN 1 NGANJUK <?= date('Y') ?></h5>
+                            <h5>PETUNJUK PPDB MAN 1 NGANJUK <?= date('Y') ?></h5>
                             <p>Kepada Seluruh Pendaftar Peserta Didik Baru di <b>MAN 1 NGANJUK</b> Wajib mendownload dan membaca <b>Pelaksanaan & Daftar Ulang PPDB</b> Untuk Info Lebih Lanjut Tekan Tombol dibawah !!!</p>
                             <br>
                             <div class="row">

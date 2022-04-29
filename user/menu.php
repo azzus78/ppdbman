@@ -8,7 +8,6 @@
   		<li><a class="nav-link" href="?pg=formulir"><i class="far fa-address-book"></i> <span>Formulir</span></a></li>
   		<?php if ($testppdb) { ?>
   		<?php } else { ?>
-            <li><a class="nav-link" href="?pg=guide_book"><i class="fas fa-cloud-download-alt"></i> <span>Info Tes PPDB</span></a></li>
   		    <li><a class="nav-link" href="?pg=pengumuman"><i class="fas fa-chalkboard-teacher"></i> <span>Info Tes PPDB</span></a></li>
   		<?php } ?>
   	<?php } ?>

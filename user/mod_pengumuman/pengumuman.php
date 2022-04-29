@@ -19,11 +19,6 @@
                                     </button>
                                 </div>
                                 <div class="col-sm-12 col-md-auto mb-2">
-                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" onclick="myFunctiondownload()">
-                                        <i class="fas fa-cloud-download-alt"></i> Download Tata Cara PPDB
-                                    </button>
-                                </div>
-                                <div class="col-sm-12 col-md-auto mb-2">
                                     <button id="tombolCetakKartu" type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#">
                                         <i class="fas fa-print"></i> Cetak Kartu
                                     </button>
@@ -60,11 +55,6 @@
                                         return false;
                                     })
                                 });
-                                </script>
-                                <script>
-                                    function myFunctiondownload() {
-                                    window.open("<?php echo $setting_kartu_ujian['filebook']; ?>");
-                                    }
                                 </script>
                                 <!-- Buka Tes CBT PPDB -->
                                 <?php
