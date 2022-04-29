@@ -33,7 +33,7 @@ if (!isset($_SESSION['id_user'])) {
     <thead>
         <tr>
             <th class="text-center">
-                #
+                No
             </th>
             <th>No. Daftar</th>
             <th>Jalur Daftar</th>
@@ -91,9 +91,10 @@ if (!isset($_SESSION['id_user'])) {
             <th>Status Penerima</th>
             <th>Jenis Kartu</th>
             <th>Nomor Kartu</th>
-            <th>Total Nilai Semester 3</th>
+            <!-- <th>Total Nilai Semester 3</th>
             <th>Total Nilai Semester 4</th>
-            <th>Total Nilai Semester 5</th>
+            <th>Total Nilai Semester 5</th> -->
+            <th>Sudah Hafal Berapa Juz</th>
             <th>Prestasi</th>
             <th>Jenis Prestasi</th>
             <th>Nama Prestasi</th>
@@ -202,12 +203,13 @@ if (!isset($_SESSION['id_user'])) {
                 <td><?= $daftar['status_kartu'] ?></td>
                 <td><?= $daftar['jenis_kartu'] ?></td>
                 <td class="str"><?= $daftar['no_kartu'] ?></td>
-                <?php $totalsmt3 = $datapres['mat3'] + $datapres['bin3'] + $datapres['bing3'] + $datapres['ipa3'] + $datapres['ips3']; ?>
+                <!-- <?php $totalsmt3 = $datapres['mat3'] + $datapres['bin3'] + $datapres['bing3'] + $datapres['ipa3'] + $datapres['ips3']; ?>
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt3 ?></font></b></td>
                 <?php $totalsmt4 = $datapres['mat4'] + $datapres['bin4'] + $datapres['bing4'] + $datapres['ipa4'] + $datapres['ips4']; ?>
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt4 ?></font></b></td>
                 <?php $totalsmt5 = $datapres['mat5'] + $datapres['bin5'] + $datapres['bing5'] + $datapres['ipa5'] + $datapres['ips5']; ?>
-                <td class="str" align="center"><b><font color="green"><?= $totalsmt5 ?></font></b></td>
+                <td class="str" align="center"><b><font color="green"><?= $totalsmt5 ?></font></b></td> -->
+                <td><?= $datapres['hafaljus'] ?></td>
                 <td><?= $datapres['tipe_prestasi'] ?></td>
                 <td><?= $datapres['jenis_prestasi'] ?></td>
                 <td><?= $datapres['nama_prestasi'] ?></td>

@@ -42,10 +42,10 @@ if ($pg == 'cek') {
     echo json_encode($pesan);
   } else if ($cek1p == 0 && $cek2p == 0) {
     $data = [
-      'nama'          => mysqli_escape_string($siswa['nama']), 
+      'nama'          => mysqli_escape_string($koneksi, $siswa['nama']), 
       'nisn'          => $siswa['nisn'],
       'password'      => $siswa['password'],
-      'asal'          => mysqli_escape_string($siswa['asal_sekolah'])
+      'asal'          => mysqli_escape_string($koneksi, $siswa['asal_sekolah'])
     ];
     
     $exec = insert($koneksi, 'kartu_ujian', $data);

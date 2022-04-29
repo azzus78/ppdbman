@@ -26,6 +26,16 @@
                             <label>Nama jenis</label>
                             <input type="text" name="nama" class="form-control" required="">
                         </div>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Upload File Jadwal Pelaksanaan</label>
+                                <input type="file" class="form-control-file" id="jadwalppdb">
+                                <label for="exampleFormControlFile1">File PDF</label><br>
+                                <label for="exampleFormControlFile2">Upload File Alur Daftar Ulang</label>
+                                <input type="file" class="form-control-file" id="alurdaful">
+                                <label for="exampleFormControlFile2">File PDF</label>
+                            </div>
+                        </form>
 
                     </div>
                     <div class="modal-footer">

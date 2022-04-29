@@ -273,7 +273,7 @@ while ($keter=mysqli_fetch_array($query)) {
         <?php if($siswa['jenis'] == "PR") {
             $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
         ?>
-        <h4>Data Nilai Rapor</h4>
+        <!-- <h4>Data Nilai Rapor</h4>
         <table style="font-size: 12px" class="table table-bordered table-striped table-sm ">
             <tbody>
                 <tr>
@@ -294,7 +294,6 @@ while ($keter=mysqli_fetch_array($query)) {
                     <td align="center"><?= $datapres['bin4'] ?></td>
                     <td align="center"><?= $datapres['bin5'] ?></td>
                 </tr>
-                <!-- / -->
                 <tr>
                     <td><b>BAHASA INGGRIS</b></td>
                     <td align="center"><?= $datapres['bing3']  ?></td>
@@ -323,13 +322,13 @@ while ($keter=mysqli_fetch_array($query)) {
                         <td align="center"><b><font color="green"><?= $totalsmt5 ?></b></font></td>
                 </tr>
             </tbody>
-        </table>
+        </table> -->
         <?php if ($datapres['tipe_prestasi'] <> null) { ?>
         <h4>Prestasi</h4>
         <table style="font-size: 12px" class="table table-striped table-bordered table-sm">
             <tbody>
             <tr>
-                    <td style="width: 150px"><b>Prestai</b></td>
+                    <td style="width: 150px"><b>Prestasi</b></td>
                     <td align="left"><?= $datapres['tipe_prestasi']  ?></td>
                 </tr>
                 <tr>
@@ -348,6 +347,17 @@ while ($keter=mysqli_fetch_array($query)) {
                     <td><b>Tingkat Prestasi</b></td>
                     <td align="left"><?= $datapres['tingkat_prestasi']  ?></td>
                 </tr>
+            </tbody>
+        </table>
+        <?php } ?>
+        <?php if ($datapres['tipe_prestasi'] <> null) { ?>
+        <h4>Tahfidz</h4>
+        <table style="font-size: 12px" class="table table-striped table-bordered table-sm">
+            <tbody>
+            <tr>
+                <td style="width: 150px"><b>Sudah Hafal Berapa Juz</b></td>
+                <td align="left"><?= $datapres['hafal_juz']  ?></td>
+            </tr>
             </tbody>
         </table>
         <?php } ?>
@@ -387,7 +397,20 @@ while ($keter=mysqli_fetch_array($query)) {
         $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
         $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
         if ($siswa['jenis']  == $jenis['id_jenis']) { ?>
-        <h4 style="page-break-before: always;">Bukti Prestasi</h4>
+        <h4 style="page-break-before: always;">Berkas Prestasi</h4>
+        <table style="font-size: 12px" class="table table-sm">
+            <tbody>
+                <tr>
+                    <td class="text-center"><img src="../../user/mod_formulir/<?= $datapres['file_prestasi'] ?>" width="600"></td>
+                </tr>
+            </tbody>
+        </table>
+        <?php } ?>
+        <?php
+        $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
+        $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
+        if ($siswa['jenis']  == $jenis['id_jenis']) { ?>
+        <h4 style="page-break-before: always;">Berkas Tahfidz</h4>
         <table style="font-size: 12px" class="table table-sm">
             <tbody>
                 <tr>

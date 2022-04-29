@@ -102,7 +102,7 @@ tipe_prestasi       is null
     <div class="col-12 col-sm-8 col-lg-8">
         <div class="card author-box card-primary">
             <div class="card-header">
-                <h4>Isi Formulir Prestasi dibawah</h4>
+                <h4>Isi Formulir Tahfidz dibawah</h4>
                 <?php if ($cek1 == 0 && $cek2 == 0 && $cek3 == 0 && $cek6 == 0) { ?>
                 <div class="card-header-action">
                     <a target="_blank" href="mod_formulir/print_daftar.php?id=<?= enkripsi($siswa['id_daftar']) ?>" type="button" class="btn btn-success"><i class="fas fa-print    "></i> Cetak Formulir</a>
@@ -212,9 +212,9 @@ tipe_prestasi       is null
                         ?>
                         <li class="nav-item">
                             <?php if ($menuAktif == 4) { ?>
-                                <a class="nav-link active" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="true"><i class="fas fa-crown    "></i> Data Prestasi</a>
+                                <a class="nav-link active" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="true"><i class="fas fa-crown    "></i> Data Prestasi & Data Tahfidz</a>
                             <?php } else { ?>
-                                <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi</a>
+                                <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi & Data Tahfidz</a>
                             <?php } ?>
                         </li>
                         <?php } ?>
@@ -1106,6 +1106,13 @@ tipe_prestasi       is null
                                     </div>
                                 </div> -->
                                 <br>
+                                <h5><i class="fas fa-crown"></i> Data Prestasi & Data Tahfidz</h5><br>
+                                <div class="form-group row mb-2">
+                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Hafal Berapa Jus</label>
+                                    <div class="col-sm-12 col-md-4">
+                                        <input type="number" name="hafaljus" class="form-control" min="1" max="30" value="<?= $prestasi['hafaljus'] ?>" required>
+                                    </div>
+                                </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Prestasi</label>
                                     <div class="col-sm-12 col-md-7">
@@ -1196,7 +1203,6 @@ tipe_prestasi       is null
                                 </script>
                                 <div id="isiTipePrestasi"></div>
                                 <div class="form-group">
-                                    <p>*Harap isi data prestasi dengan sebenar-benarnya</p>
                                     <form method="post" enctype="multipart/form-data">
                                         <div id="uploadPrestasi" hidden>
                                             <label for="berkas_prestasi">Upload Bukti Prestasi <font color="red">Akademik/Non Akademik</font></label>
@@ -1204,7 +1210,15 @@ tipe_prestasi       is null
                                             <small id="file-berkas-prestasi" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
                                         </div>
                                     </form>
-                                    <center><button type="submit" class="btn btn-primary btn-lg mt-2">Simpan Data Prestasi</button></center>
+                                    <form method="post" enctype="multipart/form-data">
+                                        <div>
+                                            <label for="ijazah_akta">Upload Berkas Tahfidz</label>
+                                            <input type="file" class="form-control-file" id="ijazah_akta" name="ijazah_akta" accept="image/*" aria-describedby="file-ijazah-akta" required>
+                                            <small id="file-ijazah-akta" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
+                                        </div>
+                                    </form>
+                                    <p>*Harap isi data tahfidz dengan sebenar-benarnya</p>
+                                    <center><button type="submit" class="btn btn-primary btn-lg mt-2">Simpan Data Prestasi & Data Tahfidz</button></center>
                                 </div>
                             </form>
                         </div>
@@ -1315,7 +1329,7 @@ tipe_prestasi       is null
                         <?php } ?>
                         </div>
                         <div class="activity-detail">
-                            <h5>Data Prestasi</h5>
+                            <h5>Data Prestasi & Data Tahfidz</h5>
                             <?php if ($cek6 <> 0) { ?>
                                 <p><span class="badge badge-danger"><i class="fas fa-times-circle"></i> Belum Lengkap</span></p>
                             <?php } else { ?>

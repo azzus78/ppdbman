@@ -1,5 +1,15 @@
 <div class="section-header">
     <h1>Hai!, <?= $siswa['nama'] ?></h1>
+    <div class="col-sm-12 col-md-auto mb-2">
+        <!-- <button type="button" class="btn btn-outline-success" data-toggle="modal" onclick="myFunctiondownload()">
+            <i class="fas fa-cloud-download-alt"></i> Download Tata Cara PPDB
+        </button> -->
+    </div>
+    <script>
+        function myFunctiondownload() {
+        window.open("<?php echo $setting_kartu_ujian['filebook']; ?>");
+        }
+    </script>
 </div>
 <!-- <div class="row">
     <div class="col-lg-3 col-md-6 col-sm-6 col-12">

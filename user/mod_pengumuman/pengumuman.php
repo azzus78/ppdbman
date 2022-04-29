@@ -10,12 +10,17 @@
                         </div>
                         <div class="activity-detail">
                             <h5>TES CBT PPDB MAN 1 NGANJUK</h5>
-                            <p>Kepada Seluruh Pendaftar Jalur Reguler Peserta Didik Baru di <b>MAN 1 NGANJUK</b> Wajib Mengikuti Tes <b>CBT</b> Untuk Info Lebih Lanjut Tekan Tombol dibawah !!!</p>
+                            <p>Kepada Seluruh Pendaftar Peserta Didik Baru di <b>MAN 1 NGANJUK</b> Wajib Mengikuti Tes <b>CBT</b> Untuk Info Lebih Lanjut Tekan Tombol dibawah !!!</p>
                             <br>
                             <div class="row">
                                 <div class="col-sm-12 col-md-auto mb-2">
                                     <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#modelInfo">
                                         <i class="fas fa-info-circle"></i> Mapel Tes PPDB
+                                    </button>
+                                </div>
+                                <div class="col-sm-12 col-md-auto mb-2">
+                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" onclick="myFunctiondownload()">
+                                        <i class="fas fa-cloud-download-alt"></i> Download Tata Cara PPDB
                                     </button>
                                 </div>
                                 <div class="col-sm-12 col-md-auto mb-2">
@@ -56,18 +61,23 @@
                                     })
                                 });
                                 </script>
+                                <script>
+                                    function myFunctiondownload() {
+                                    window.open("<?php echo $setting_kartu_ujian['filebook']; ?>");
+                                    }
+                                </script>
                                 <!-- Buka Tes CBT PPDB -->
                                 <?php
                                 if ($setting_kartu_ujian['tanggal'] <= date('Y-m-d') && $setting_kartu_ujian['waktu_mulai'] <= date('H:i:s') && $setting_kartu_ujian['waktu_selesai'] >= date('H:i:s')) {
                                 ?>
                                 <div class="col-sm-12 col-md-auto mb-2">
                                    <a onclick="myFunction()"><button type="button" class="btn btn-outline-warning">
-                                    <i class="fas fa-chalkboard-teacher"></i> TES PPDB </button></a>
+                                    <i class="fas fa-chalkboard-teacher"></i> Tes Penjurusan </button></a>
                                 </div>
                                 <?php } else { ?>
                                 <div class="col-sm-12 col-md-auto mb-2">
                                    <a><button type="button" class="btn btn-outline-warning disabled">
-                                    <i class="fas fa-chalkboard-teacher"></i> TES PPDB </button></a>
+                                    <i class="fas fa-chalkboard-teacher"></i> Tes Penjurusan </button></a>
                                 </div>
                                 <?php } ?>
                                 <script>
