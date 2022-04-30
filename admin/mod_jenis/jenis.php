@@ -53,8 +53,16 @@
 <div class="row">
     <div class="col-12">
         <div class="card">
-            <div class="card-header">
+            <div class="card-header card-header-action">
                 <h4>Data jenis</h4>
+                <div class="card-header-action">
+                    <a href="../user/mod_formulir/<?= $datapres['file_daful'] ?>" target="_blank"><button type="button" class="btn btn-outline-success" id="listPrestasi">
+                        <i class="fas fa-project-diagram"></i> File Jadwal Pelaksanaan
+                    </button></a>
+                    <a href="../user/mod_formulir/<?= $datapres['file_daful'] ?>" target="_blank"><button type="button" class="btn btn-outline-warning" id="listReguler">
+                        <i class="fas fa-money-check-alt"></i> File Daftar Ulang
+                    </button></a>
+                </div>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
@@ -113,7 +121,15 @@
                                                                 <input type="text" name="nama" value="<?= $jenis['nama_jenis'] ?>" class="form-control" required="">
                                                             </div>
                                                             <div class="form-group">
-                                                                <div class="control-label">Status jenis</div>
+                                                                <div class="control-label">Status jenis jalur daftar</div>
+                                                                <label class="custom-switch mt-2">
+                                                                    <input type="checkbox" name="status" class="custom-switch-input" value='1' <?php if ($jenis['status'] == 1) {
+                                                                                                                                                    echo "checked";
+                                                                                                                                                } ?>>
+                                                                    <span class="custom-switch-indicator"></span>
+                                                                    <span class="custom-switch-description"> Pilih Status</span>
+                                                                </label>
+                                                                <div class="control-label">Status formulir pendaftaran</div>
                                                                 <label class="custom-switch mt-2">
                                                                     <input type="checkbox" name="status" class="custom-switch-input" value='1' <?php if ($jenis['status'] == 1) {
                                                                                                                                                     echo "checked";

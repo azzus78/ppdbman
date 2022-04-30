@@ -94,7 +94,7 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-$dompdf->stream("Bukti_Bayar.pdf", array("Attachment" => false));
+$dompdf->stream("Bukti_".$siswa['nama'].".pdf", array("Attachment" => false));
 
 exit(0);
 ?>

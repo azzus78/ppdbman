@@ -9,7 +9,7 @@ require "config/functions.crud.php";
 <head>
 <style>
 body  {
-  background-image: url("https://drive.google.com/uc?export=view&id=1kp_yEtgFSHKOBPBNfJJTHc5OHK008SzY");
+  background-image: url("assets/img/6098836.jpg");
   background-color: #cccccc;
 }
 </style>

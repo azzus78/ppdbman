@@ -25,6 +25,8 @@ if ($pg == '') {
     include "mod_formulir/tahfidz_formulir.php";
 } elseif ($pg == 'guide_book') {
     include "mod_pengumuman/guide_book.php";
+} elseif ($pg == 'block') {
+    include "mod_formulir/block.php";
 }
 
 
