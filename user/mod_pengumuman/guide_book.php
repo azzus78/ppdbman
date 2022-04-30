@@ -1,4 +1,7 @@
-<?php $setting_kartu_ujian = fetch($koneksi, 'setting_kartu_ujian', ['id_setting_kartu' => 1]); ?>
+<?php 
+$jadwal = fetch($koneksi, 'berkas_formulir', ['id_berkas' => 1]);
+$daful = fetch($koneksi, 'berkas_formulir', ['id_berkas' => 2]);
+?>
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -14,23 +17,15 @@
                             <br>
                             <div class="row">
                                 <div class="col-sm-12 col-md-auto mb-2">
-                                    <button type="button" class="btn btn-outline-success" data-toggle="modal" onclick="myFunctionjadwal()">
+                                    <button type="button" class="btn btn-outline-success" onclick="window.open('<?php echo './../admin/mod_jenis/' . $jadwal['link_berkas']; ?>')">
                                         <i class="fas fa-clipboard-check"></i> Jadwal Pelaksanaan
                                     </button>
                                 </div>
                                 <div class="col-sm-12 col-md-auto mb-2">
-                                    <button type="button" class="btn btn-outline-danger" data-toggle="modal" onclick="myFunctionjadwal()">
+                                    <button type="button" class="btn btn-outline-danger" onclick="window.open('<?php echo './../admin/mod_jenis/' . $daful['link_berkas']; ?>')">
                                         <i class="fas fa-business-time"></i> Alur Daftar Ulang
                                     </button>
                                 </div>
-                                <script>
-                                    function myFunctionjadwal() {
-                                    window.open("<?php echo $setting_kartu_ujian['filebook']; ?>");
-                                    }
-                                    function myFunctionalur() {
-                                    window.open("<?php echo $setting_kartu_ujian['filealur']; ?>");
-                                    }
-                                </script>
                             </div>
                         </div>
                     </div>
