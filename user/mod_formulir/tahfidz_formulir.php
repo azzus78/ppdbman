@@ -991,121 +991,23 @@ tipe_prestasi       is null
                         <div class="tab-pane fade" id="prestasi3" role="tabpanel" aria-labelledby="prestasi-tab3">
                         <?php } ?>
                             <?php
-                            $prestasi = fetch($koneksi, 'prestasi', ['id_daftar' => $siswa['id_daftar']]);
+                            $tahfidz = fetch($koneksi, 'tahfidz', ['id_daftar' => $siswa['id_daftar']]);
                             ?>
                             <form id="form-prestasi">
-                                <!-- <h5><i class="fas fa-crown"></i> Nilai Rapor Semester 3-5</h5><br>
-                                <center><span><b><font color="red">Masukkan Nilai Pengetahuan *</font></b></span></center><br>
-                                <center><h6>Nilai Rapor Semester 3</h6></center>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">MATEMATIKA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="mat3" class="form-control" maxlength="10" value="<?= $prestasi['mat3'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">BAHASA INDONESIA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="bin3" class="form-control" maxlength="10" value="<?= $prestasi['bin3'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">BAHASA INGGRIS</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="bing3" class="form-control" maxlength="10" value="<?= $prestasi['bing3'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">IPA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="ipa3" class="form-control" maxlength="10" value="<?= $prestasi['ipa3'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">IPS</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="ips3" class="form-control" maxlength="10" value="<?= $prestasi['ips3'] ?>" required>
-                                    </div>
-                                </div>
-                                <br>
-                                <center><h6>Nilai Rapor Semester 4</h6></center>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">MATEMATIKA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="mat4" class="form-control" maxlength="10" value="<?= $prestasi['mat4'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">BAHASA INDONESIA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="bin4" class="form-control" maxlength="10" value="<?= $prestasi['bin4'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">BAHASA INGGRIS</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="bing4" class="form-control" maxlength="10" value="<?= $prestasi['bing4'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">IPA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="ipa4" class="form-control" maxlength="10" value="<?= $prestasi['ipa4'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">IPS</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="ips4" class="form-control" maxlength="10" value="<?= $prestasi['ips4'] ?>" required>
-                                    </div>
-                                </div>
-                                <br>
-                                <center><h6>Nilai Rapor Semester 5</h6></center>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">MATEMATIKA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="mat5" class="form-control" maxlength="10" value="<?= $prestasi['mat5'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">BAHASA INDONESIA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="bin5" class="form-control" maxlength="10" value="<?= $prestasi['bin5'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">BAHASA INGGRIS</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="bing5" class="form-control" maxlength="10" value="<?= $prestasi['bing5'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">IPA</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="ipa5" class="form-control" maxlength="10" value="<?= $prestasi['ipa5'] ?>" required>
-                                    </div>
-                                </div>
-                                <div class="form-group row mb-2">
-                                    <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">IPS</label>
-                                    <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="ips5" class="form-control" maxlength="10" value="<?= $prestasi['ips5'] ?>" required>
-                                    </div>
-                                </div> -->
-                                <br>
                                 <h5><i class="fas fa-crown"></i> Data Prestasi & Data Tahfidz</h5><br>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Hafal Berapa Jus</label>
                                     <div class="col-sm-12 col-md-4">
-                                        <input type="number" name="hafaljus" class="form-control" min="1" max="30" value="<?= $prestasi['hafaljus'] ?>" required>
+                                        <input type="number" name="jumlah_jus" class="form-control" min="1" max="30" value="<?= $tahfidz['jumlah_jus'] ?>" required>
                                     </div>
                                 </div>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Prestasi</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <select class='form-control' id="tipePrestasi" name='tipeprestasi'>
+                                        <select class='form-control' id="tipeTahfidz" name='tipeTahfidz'>
                                             <option value=''>Pilih Prestasi</option>";
                                             <?php foreach ($jenis_prestasi as $val) { ?>
-                                                <?php if ($prestasi['tipe_prestasi'] == $val) { ?>
+                                                <?php if ($tahfidz['tipe_prestasi'] == $val) { ?>
                                                     <option value='<?= $val ?>' selected><?= $val ?> </option>
                                                 <?php  } else { ?>
                                                     <option value='<?= $val ?>'><?= $val ?> </option>
@@ -1116,19 +1018,19 @@ tipe_prestasi       is null
                                 </div>
                                 <script type="text/javascript">
                                 $(document).ready(function() {
-                                    $("#tipePrestasi").change(function() {
+                                    $("#tipeTahfidz").change(function() {
                                         var tipe = $(this).val();
                                         if (tipe == "AKADEMIK") {
                                             $("#berkas_prestasi").prop('required', true);
                                             $("#uploadPrestasi").prop('hidden', false);
-                                            $("#isiTipePrestasi").html(`
+                                            $("#isiTipeTahfidz").html(`
                                                 <div class="form-group row mb-2">
                                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Jenis Prestasi</label>
                                                     <div class="col-sm-12 col-md-7">
                                                         <select class='form-control' name='jenisprestasi' required>
                                                             <option value=''>Pilih Jenis Prestasi</option>";
                                                             <?php foreach ($jenis_prestasi_akademik as $val) { ?>
-                                                                <?php if ($prestasi['jenis_prestasi'] == $val) { ?>
+                                                                <?php if ($tahfidz['jenis_prestasi'] == $val) { ?>
                                                                     <option value='<?= $val ?>' selected><?= $val ?> </option>
                                                                 <?php  } else { ?>
                                                                     <option value='<?= $val ?>'><?= $val ?> </option>
@@ -1141,11 +1043,11 @@ tipe_prestasi       is null
                                         } else if (tipe == "NON AKADEMIK") {
                                             $("#berkas_prestasi").prop('required', true);
                                             $("#uploadPrestasi").prop('hidden', false);
-                                            $("#isiTipePrestasi").html(`
+                                            $("#isiTipeTahfidz").html(`
                                                 <div class="form-group row mb-2">
                                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Nama Prestasi</label>
                                                     <div class="col-sm-12 col-md-7">
-                                                        <input type="text" name="namaprestasi" class="form-control" value="<?= $prestasi['nama_prestasi'] ?>" required>
+                                                        <input type="text" name="namaprestasi" class="form-control" value="<?= $tahfidz['nama_prestasi'] ?>" required>
                                                     </div>
                                                 </div>
                                                 <div class="form-group row mb-2">
@@ -1154,7 +1056,7 @@ tipe_prestasi       is null
                                                         <select class='form-control' name='peringkatprestasi' required>
                                                             <option value=''>Pilih Peringkat Prestasi</option>";
                                                             <?php foreach ($peringkatprestasi as $val) { ?>
-                                                                <?php if ($prestasi['peringkat_prestasi'] == $val) { ?>
+                                                                <?php if ($tahfidz['peringkat_prestasi'] == $val) { ?>
                                                                     <option value='<?= $val ?>' selected><?= $val ?> </option>
                                                                 <?php  } else { ?>
                                                                     <option value='<?= $val ?>'><?= $val ?> </option>
@@ -1169,7 +1071,7 @@ tipe_prestasi       is null
                                                         <select class='form-control' name='tingkatprestasi' required>
                                                             <option value=''>Pilih Tingkat Prestasi</option>";
                                                             <?php foreach ($tingkatprestasi as $val) { ?>
-                                                                <?php if ($prestasi['tingkat_prestasi'] == $val) { ?>
+                                                                <?php if ($tahfidz['tingkat_prestasi'] == $val) { ?>
                                                                     <option value='<?= $val ?>' selected><?= $val ?> </option>
                                                                 <?php  } else { ?>
                                                                     <option value='<?= $val ?>'><?= $val ?> </option>
@@ -1182,12 +1084,12 @@ tipe_prestasi       is null
                                         } else {
                                             $("#berkas_prestasi").prop('required', false);
                                             $("#uploadPrestasi").prop('hidden', true);
-                                            $("#isiTipePrestasi").html(`<div></div>`);
+                                            $("#isiTipeTahfidz").html(`<div></div>`);
                                         }
                                     });
                                 });
                                 </script>
-                                <div id="isiTipePrestasi"></div>
+                                <div id="isiTipeTahfidz"></div>
                                 <div class="form-group">
                                     <form method="post" enctype="multipart/form-data">
                                         <div id="uploadPrestasi" hidden>
@@ -1198,9 +1100,9 @@ tipe_prestasi       is null
                                     </form>
                                     <form method="post" enctype="multipart/form-data">
                                         <div>
-                                            <label for="ijazah_akta">Upload Berkas Tahfidz</label>
-                                            <input type="file" class="form-control-file" id="ijazah_akta" name="ijazah_akta" accept="image/*" aria-describedby="file-ijazah-akta" required>
-                                            <small id="file-ijazah-akta" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
+                                            <label for="berkas_tahfidz">Upload Berkas Tahfidz</label>
+                                            <input type="file" class="form-control-file" id="berkas_tahfidz" name="berkas_tahfidz" accept="image/*" aria-describedby="file-tahfidz" required>
+                                            <small id="file-tahfidz" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
                                         </div>
                                     </form>
                                     <p>*Harap isi data tahfidz dengan sebenar-benarnya</p>
@@ -1338,7 +1240,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=simpandatadiri',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=simpandatadiri',
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
@@ -1375,7 +1277,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=simpanalamat',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=simpanalamat',
                 data: $(this).serialize(),
                 beforeSend: function() {
                     $('#btnsimpan').prop('disabled', true);
@@ -1406,7 +1308,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=simpanasalsekolah',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=simpanasalsekolah',
                 data: $(this).serialize(),
                 beforeSend: function() {
                     $('#btnsimpan').prop('disabled', true);
@@ -1437,7 +1339,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=simpanortu',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=simpanortu',
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
@@ -1471,7 +1373,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=simpaninfokartu',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=simpaninfokartu',
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
@@ -1505,7 +1407,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=gantifoto',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=gantifoto',
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
@@ -1529,7 +1431,7 @@ tipe_prestasi       is null
             e.preventDefault();
             $.ajax({
                 type: 'POST',
-                url: 'mod_formulir/crud_prestasi_formulir.php?pg=simpanprestasi',
+                url: 'mod_formulir/crud_tahfidz_formulir.php?pg=simpanprestasi',
                 data: new FormData(this),
                 processData: false,
                 contentType: false,
@@ -1598,6 +1500,11 @@ tipe_prestasi       is null
         $("#berkas_prestasi").change(function() {
             if (!fileSizeValidation(this, 2000)) {
                 $("#berkas_prestasi").replaceWith($("#berkas_prestasi").val('')).clone(true);
+            }
+        });
+        $("#berkas_tahfidz").change(function() {
+            if (!fileSizeValidation(this, 2000)) {
+                $("#berkas_tahfidz").replaceWith($("#berkas_tahfidz").val('')).clone(true);
             }
         });
         $("#foto_siswa").change(function() {

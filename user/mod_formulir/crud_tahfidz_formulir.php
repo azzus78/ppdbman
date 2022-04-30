@@ -403,21 +403,75 @@ if ($pg == 'gantifoto') {
 }
 if ($pg == 'simpanprestasi') {
     $siswa = fetch($koneksi, 'daftar', ['id_daftar' => $id]);
-    $prestasi = fetch($koneksi, 'prestasi', ['id_daftar' => $id]);
+    $tahfidz = fetch($koneksi, 'tahfidz', ['id_daftar' => $id]);
     $ektensi = ['jpg', 'png', 'jpeg', 'JPG', 'JPEG', 'pdf'];
-    if ($_POST['tipeprestasi'] <> '') {
+    if ($_POST['tipeprestasi'] == '') {
+        $data = [
+            'jumlah_jus'              => $_POST['jumlah_jus'],
+        ];
+
+        if ($_FILES['berkas_tahfidz']) {
+            $logo = $_FILES['berkas_tahfidz']['name'];
+            $temp = $_FILES['berkas_tahfidz']['tmp_name'];
+            $ext = explode('.', $logo);
+            $ext = end($ext);
+            if (in_array($ext, $ektensi)) {
+                $dest = 'berkas_tahfidz/th_' . $siswa['nisn'] .time(). '.' . $ext;
+                if ($tahfidz['file_tahfidz'] <> null) {
+                    unlink($tahfidz['file_tahfidz']);
+                }
+                $upload = move_uploaded_file($temp,  $dest);
+                if ($upload) {
+                  $data1 = [
+                    'file_tahfidz'     => $dest
+                  ];
+    
+                  $data = array_merge($data, $data1);
+
+                  $exec = update($koneksi, 'tahfidz', $data, ['id_daftar' => $id]);
+                  if ($exec) {
+                      $pesan = [
+                          'pesan' => 'ok'
+                      ];
+                      echo 'ok';
+                  } else {
+                      $pesan = [
+                          'pesan' => mysqli_error($koneksi)
+                      ];
+                      echo mysqli_error($koneksi);
+                  }
+                } else {
+                    echo "penyimpanan gagal dilakukan, ulangi lagi yak";
+                }
+            }
+        } else {
+            $exec = update($koneksi, 'tahfidz', $data, ['id_daftar' => $id]);
+            if ($exec) {
+                $pesan = [
+                    'pesan' => 'ok'
+                ];
+                echo 'ok';
+            } else {
+                $pesan = [
+                    'pesan' => mysqli_error($koneksi)
+                ];
+                echo mysqli_error($koneksi);
+            }
+        }
+    } else if ($_POST['tipeprestasi'] <> '') {
         $logo = $_FILES['berkas_prestasi']['name'];
         $temp = $_FILES['berkas_prestasi']['tmp_name'];
         $ext = explode('.', $logo);
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
-            $dest = 'berkas_prestasi/pr_' . $siswa['nisn'] .time(). '.' . $ext;
-            if ($prestasi['file_prestasi'] <> null) {
-                unlink($prestasi['file_prestasi']);
+            $dest = 'berkas_tahfidz/th_pr_' . $siswa['nisn'] .time(). '.' . $ext;
+            if ($tahfidz['file_prestasi'] <> null) {
+                unlink($tahfidz['file_prestasi']);
             }
             $upload = move_uploaded_file($temp,  $dest);
             if ($upload) {
               $data = [
+                'jumlah_jus'              => $_POST['jumlah_jus'],
                 'tipe_prestasi'     => mysqli_escape_string($koneksi, $_POST['tipeprestasi']),
                 'file_prestasi'     => $dest
               ];
@@ -435,17 +489,53 @@ if ($pg == 'simpanprestasi') {
 
               $data = array_merge($data, $data1);
 
-              $exec = update($koneksi, 'prestasi', $data, ['id_daftar' => $id]);
-              if ($exec) {
-                  $pesan = [
-                      'pesan' => 'ok'
-                  ];
-                  echo 'ok';
+              if ($_FILES['berkas_tahfidz']) {
+                  $logo1 = $_FILES['berkas_tahfidz']['name'];
+                  $temp1 = $_FILES['berkas_tahfidz']['tmp_name'];
+                  $ext1 = explode('.', $logo1);
+                  $ext1 = end($ext1);
+                  if (in_array($ext1, $ektensi)) {
+                      $dest1 = 'berkas_tahfidz/th_' . $siswa['nisn'] .time(). '.' . $ext1;
+                      if ($tahfidz['file_tahfidz'] <> null) {
+                          unlink($tahfidz['file_tahfidz']);
+                      }
+                      $upload1 = move_uploaded_file($temp1,  $dest1);
+                      if ($upload1) {
+                        $data2 = [
+                            'file_tahfidz'     => $dest1
+                        ];
+
+                        $data = array_merge($data, $data2);
+
+                        $exec = update($koneksi, 'tahfidz', $data, ['id_daftar' => $id]);
+                        if ($exec) {
+                            $pesan = [
+                                'pesan' => 'ok'
+                            ];
+                            echo 'ok';
+                        } else {
+                            $pesan = [
+                                'pesan' => mysqli_error($koneksi)
+                            ];
+                            echo mysqli_error($koneksi);
+                        }
+                      } else {
+                          echo "penyimpanan gagal dilakukan, ulangi lagi yak";
+                      }
+                  }
               } else {
-                  $pesan = [
-                      'pesan' => mysqli_error($koneksi)
-                  ];
-                  echo mysqli_error($koneksi);
+                  $exec = update($koneksi, 'tahfidz', $data, ['id_daftar' => $id]);
+                  if ($exec) {
+                      $pesan = [
+                          'pesan' => 'ok'
+                      ];
+                      echo 'ok';
+                  } else {
+                      $pesan = [
+                          'pesan' => mysqli_error($koneksi)
+                      ];
+                      echo mysqli_error($koneksi);
+                  }
               }
             } else {
                 echo "penyimpanan gagal dilakukan, ulangi lagi yak";
