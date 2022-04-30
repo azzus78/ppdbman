@@ -50,7 +50,7 @@
         <div class="modal fade" id="filejadwal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
-                    <form id="filejadwal">
+                    <form id="filejadwalform" method="post" enctype="multipart/form-data">
                         <div class="modal-header">
                             <h5 class="modal-title">Upload File Jadwal Pelaksanaan</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -60,7 +60,7 @@
                         <div class="modal-body">
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload File Jadwal Pelaksanaan</label>
-                                <input type="file" class="form-control-file" id="jadwalppdb">
+                                <input type="file" class="form-control-file"  id="berkas_jadwal" name="berkas_jadwal">
                                 <label for="exampleFormControlFile1">File PDF</label>
                             </div>
                         </div>
@@ -76,7 +76,7 @@
     <div class="modal fade" id="filedaful" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="filedaful">
+                <form id="filedafulform" method="post" enctype="multipart/form-data">
                     <div class="modal-header">
                         <h5 class="modal-title">Upload File Alur Daftar Ulang</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -86,7 +86,7 @@
                     <div class="modal-body">
                         <div class="form-group">
                             <label for="exampleFormControlFile1">Upload File Alur Daftar Ulang</label>
-                            <input type="file" class="form-control-file" id="alurdaful">
+                            <input type="file" class="form-control-file" id="berkas_daful" name="berkas_daful">
                             <label for="exampleFormControlFile1">File PDF</label>
                         </div>
                     </div>
@@ -241,6 +241,59 @@
             type: 'POST',
             url: 'mod_jenis/crud_jenis.php?pg=tambah',
             data: $(this).serialize(),
+            success: function(data) {
+
+                iziToast.success({
+                    title: 'Mantap!',
+                    message: 'Data Berhasil ditambahkan',
+                    position: 'topRight'
+                });
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
+                $('#tambahdata').modal('hide');
+                //$('#bodyreset').load(location.href + ' #bodyreset');
+            }
+        });
+        return false;
+    });
+
+    $('#filejadwalform').submit(function(e) {
+        console.log("save");
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'mod_jenis/crud_jenis.php?pg=jadwal',
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            cache: false,
+            success: function(data) {
+
+                iziToast.success({
+                    title: 'Mantap!',
+                    message: 'Data Berhasil ditambahkan',
+                    position: 'topRight'
+                });
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
+                $('#tambahdata').modal('hide');
+                //$('#bodyreset').load(location.href + ' #bodyreset');
+            }
+        });
+        return false;
+    });
+
+    $('#filedafulform').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'mod_jenis/crud_jenis.php?pg=daful',
+            data: new FormData(this),
+            processData: false,
+            contentType: false,
+            cache: false,
             success: function(data) {
 
                 iziToast.success({

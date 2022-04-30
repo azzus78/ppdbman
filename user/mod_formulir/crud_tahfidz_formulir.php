@@ -410,7 +410,7 @@ if ($pg == 'simpanprestasi') {
             'jumlah_jus'              => $_POST['jumlah_jus'],
         ];
 
-        if ($_FILES['berkas_tahfidz']) {
+        if ($_FILES['berkas_tahfidz']['name'] <> '') {
             $logo = $_FILES['berkas_tahfidz']['name'];
             $temp = $_FILES['berkas_tahfidz']['tmp_name'];
             $ext = explode('.', $logo);
@@ -489,7 +489,7 @@ if ($pg == 'simpanprestasi') {
 
               $data = array_merge($data, $data1);
 
-              if ($_FILES['berkas_tahfidz']) {
+              if ($_FILES['berkas_tahfidz']['name'] <> '') {
                   $logo1 = $_FILES['berkas_tahfidz']['name'];
                   $temp1 = $_FILES['berkas_tahfidz']['tmp_name'];
                   $ext1 = explode('.', $logo1);
