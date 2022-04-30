@@ -139,7 +139,7 @@ if (isset($_SESSION['id_siswa'])) {
             </div>
             <!-- INCLUDE MAIN MENU DI MENU.PHP -->
             <?php 
-              $prestasi = !strcmp($siswa['jenis'], "PR");
+              $jenis = $siswa['jenis'];
               $testppdb = ($siswa['status'] == 1);
               $verified = ($siswa['status'] == 1);
               include "menu.php";
@@ -151,7 +151,6 @@ if (isset($_SESSION['id_siswa'])) {
         <div class="main-content">
           <section class="section">
             <?php
-              $prestasi = !strcmp($siswa['jenis'], "PR");
               include "content.php"; ?>
           </section>
         </div>

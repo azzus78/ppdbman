@@ -7,7 +7,6 @@ session_start();
 if ($pg == 'simpan') {
     include_once 'securimage/securimage.php';
     $securimage = new Securimage();
-    $cekPrestasi = strcmp($_POST['jenis'], "PR");
     if ($securimage->check($_POST['kodepengaman']) == false) {
         $pesan = [
             'pesan' => 'KODE CAPTCHA SALAH'
@@ -37,12 +36,18 @@ if ($pg == 'simpan') {
             $exec = insert($koneksi, 'daftar', $data);
             $namapendek = explode(" ", $nama);
 
-            if (!$cekPrestasi) {
+            if (!strcmp($_POST['jenis'], "PR")) {
                 $siswa = fetch($koneksi, 'daftar', ['nisn' => $_POST['nisn']]);
                 $dataPrestasi = [
                     'id_daftar' => $siswa['id_daftar']
                 ];
                 insert($koneksi, 'prestasi', $dataPrestasi);
+            } elseif (!strcmp($_POST['jenis'], "TH")) {
+                $siswa = fetch($koneksi, 'daftar', ['nisn' => $_POST['nisn']]);
+                $dataPrestasi = [
+                    'id_daftar' => $siswa['id_daftar']
+                ];
+                insert($koneksi, 'tahfidz', $dataPrestasi);
             }
 
             $pesan = [

@@ -81,21 +81,6 @@ file_kartu                    is  null
 ")); 
 $cek6 = mysqli_num_rows(mysqli_query($koneksi, "select * from prestasi where
 id_daftar         = '$siswa[id_daftar]' and
-mat3                is null and
-bin3                is null and
-bing3               is null and
-ipa3                is null and
-ips3                is null and
-mat4                is null and
-bin4                is null and
-bing4               is null and
-ipa4                is null and
-ips4                is null and
-mat5                is null and
-bin5                is null and
-bing5               is null and
-ipa5                is null and
-ips5                is null and
 tipe_prestasi       is null
 ")); ?>
 <div class="row">

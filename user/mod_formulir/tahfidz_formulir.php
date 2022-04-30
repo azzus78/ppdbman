@@ -79,23 +79,9 @@ jenis_kartu                 is  null and
 no_kartu                     is  null and 
 file_kartu                    is  null
 ")); 
-$cek6 = mysqli_num_rows(mysqli_query($koneksi, "select * from prestasi where
+$cek6 = mysqli_num_rows(mysqli_query($koneksi, "select * from tahfidz where
 id_daftar         = '$siswa[id_daftar]' and
-mat3                is null and
-bin3                is null and
-bing3               is null and
-ipa3                is null and
-ips3                is null and
-mat4                is null and
-bin4                is null and
-bing4               is null and
-ipa4                is null and
-ips4                is null and
-mat5                is null and
-bin5                is null and
-bing5               is null and
-ipa5                is null and
-ips5                is null and
+jumlah_jus       is null and
 tipe_prestasi       is null
 ")); ?>
 <div class="row">
@@ -207,7 +193,7 @@ tipe_prestasi       is null
                             <a class="nav-link" id="pip-tab3" data-toggle="tab" href="#pip3" role="tab" aria-controls="pip" aria-selected="false"><i class="fas fa-edit    "></i> Informasi KKS/PKH/PKS/PIP/SKM</a>
                         </li> -->
                         <?php
-                        $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
+                        $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'TAHFIDZ']); 
                         if ($siswa['jenis'] == $jenis['id_jenis']) {
                         ?>
                         <li class="nav-item">

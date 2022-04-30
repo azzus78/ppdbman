@@ -3,14 +3,10 @@
 $prestasiState = fetch($koneksi, 'jenis', ['nama_jenis' => "PRESTASI"]);
 if ($pg == '') {
     include "home.php";
-} elseif ($pg == 'formulir' && !$prestasi) {
+} elseif ($pg == 'formulir') {
     include "mod_formulir/formulir.php";
-} elseif ($pg == 'prestasi_formulir' && $prestasi) {
+} elseif ($pg == 'prestasi_formulir') {
     include "mod_formulir/prestasi_formulir.php";
-    // if ($prestasiState['status'] == 1)
-    //     include "mod_formulir/prestasi_formulir.php";
-    // else
-    //     include "block.php";
 } elseif ($pg == 'detail') {
     include "mod_formulir/detail.php";  //Modul Detail Pendaftaran
 } elseif ($pg == 'bayar') {
