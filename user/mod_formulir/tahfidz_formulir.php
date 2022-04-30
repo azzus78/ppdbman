@@ -1004,7 +1004,7 @@ tipe_prestasi       is null
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Prestasi</label>
                                     <div class="col-sm-12 col-md-7">
-                                        <select class='form-control' id="tipeTahfidz" name='tipeTahfidz'>
+                                        <select class='form-control' id="tipePrestasi" name='tipeprestasi'>
                                             <option value=''>Pilih Prestasi</option>";
                                             <?php foreach ($jenis_prestasi as $val) { ?>
                                                 <?php if ($tahfidz['tipe_prestasi'] == $val) { ?>
@@ -1018,7 +1018,7 @@ tipe_prestasi       is null
                                 </div>
                                 <script type="text/javascript">
                                 $(document).ready(function() {
-                                    $("#tipeTahfidz").change(function() {
+                                    $("#tipePrestasi").change(function() {
                                         var tipe = $(this).val();
                                         if (tipe == "AKADEMIK") {
                                             $("#berkas_prestasi").prop('required', true);
