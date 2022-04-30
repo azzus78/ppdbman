@@ -149,6 +149,8 @@ if ($cek1 <> 0 || $cek2 <> 0 || $cek3 <> 0 || $cek4 <> 0) { ?>
     Silahkan lengkapi data diri anda klik tombol ini untuk isi formulir 
     <?php if (!strcmp($siswa['jenis'], "PR")) { ?>
     <a class="btn btn-success" href="?pg=prestasi_formulir" role="button">Isi Formulir</a>
+    <?php } else if (!strcmp($siswa['jenis'], "TH")) { ?>
+    <a class="btn btn-success" href="?pg=tahfidz_formulir" role="button">Isi Formulir</a>
     <?php } else { ?>
     <a class="btn btn-success" href="?pg=formulir" role="button">Isi Formulir</a>
     <?php } ?>
