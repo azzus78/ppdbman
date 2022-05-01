@@ -26,7 +26,7 @@
                             <label>Nama jenis</label>
                             <input type="text" name="nama" class="form-control" required="">
                         </div>
-                        <form>
+                        <!-- <form>
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload File Jadwal Pelaksanaan</label>
                                 <input type="file" class="form-control-file" id="jadwalppdb">
@@ -35,7 +35,7 @@
                                 <input type="file" class="form-control-file" id="alurdaful">
                                 <label for="exampleFormControlFile2">File PDF</label>
                             </div>
-                        </form>
+                        </form> -->
 
                     </div>
                     <div class="modal-footer">
@@ -46,8 +46,58 @@
             </div>
         </div>
     </div>
-
-
+    <!-- modal upload file -->
+        <div class="modal fade" id="filejadwal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <form id="filejadwal">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Upload File Jadwal Pelaksanaan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="form-group">
+                                <label for="exampleFormControlFile1">Upload File Jadwal Pelaksanaan</label>
+                                <input type="file" class="form-control-file" id="jadwalppdb">
+                                <label for="exampleFormControlFile1">File PDF</label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    <!-- modal daful -->
+    <div class="modal fade" id="filedaful" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="filedaful">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Upload File Alur Daftar Ulang</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="exampleFormControlFile1">Upload File Alur Daftar Ulang</label>
+                            <input type="file" class="form-control-file" id="alurdaful">
+                            <label for="exampleFormControlFile1">File PDF</label>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
 
 <div class="row">
@@ -56,12 +106,12 @@
             <div class="card-header card-header-action">
                 <h4>Data jenis</h4>
                 <div class="card-header-action">
-                    <a href="../user/mod_formulir/<?= $datapres['file_daful'] ?>" target="_blank"><button type="button" class="btn btn-outline-success" id="listPrestasi">
+                    <button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#filejadwal">
                         <i class="fas fa-project-diagram"></i> File Jadwal Pelaksanaan
-                    </button></a>
-                    <a href="../user/mod_formulir/<?= $datapres['file_daful'] ?>" target="_blank"><button type="button" class="btn btn-outline-warning" id="listReguler">
+                    </button>
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#filedaful">
                         <i class="fas fa-money-check-alt"></i> File Daftar Ulang
-                    </button></a>
+                    </button>
                 </div>
             </div>
             <div class="card-body">
