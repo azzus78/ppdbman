@@ -993,7 +993,7 @@ tipe_prestasi       is null
                             <?php
                             $tahfidz = fetch($koneksi, 'tahfidz', ['id_daftar' => $siswa['id_daftar']]);
                             ?>
-                            <form id="form-prestasi">
+                            <form id="form-prestasi" enctype="multipart/form-data">
                                 <h5><i class="fas fa-crown"></i> Data Prestasi & Data Tahfidz</h5><br>
                                 <div class="form-group row mb-2">
                                     <label class="col-form-label text-md-right col-12 col-md-3 col-lg-3">Hafal Berapa Jus</label>
@@ -1091,20 +1091,16 @@ tipe_prestasi       is null
                                 </script>
                                 <div id="isiTipeTahfidz"></div>
                                 <div class="form-group">
-                                    <form method="post" enctype="multipart/form-data">
-                                        <div id="uploadPrestasi" hidden>
-                                            <label for="berkas_prestasi">Upload Bukti Prestasi <font color="red">Akademik/Non Akademik</font></label>
-                                            <input type="file" class="form-control-file" id="berkas_prestasi" name="berkas_prestasi" accept="image/*,application/pdf" aria-describedby="file-berkas-prestasi">
-                                            <small id="file-berkas-prestasi" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
-                                        </div>
-                                    </form>
-                                    <form method="post" enctype="multipart/form-data">
-                                        <div>
-                                            <label for="berkas_tahfidz">Upload Berkas Tahfidz</label>
-                                            <input type="file" class="form-control-file" id="berkas_tahfidz" name="berkas_tahfidz" accept="image/*" aria-describedby="file-tahfidz" required>
-                                            <small id="file-tahfidz" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
-                                        </div>
-                                    </form>
+                                    <div id="uploadPrestasi" hidden>
+                                        <label for="berkas_prestasi">Upload Bukti Prestasi <font color="red">Akademik/Non Akademik</font></label>
+                                        <input type="file" class="form-control-file" id="berkas_prestasi" name="berkas_prestasi" accept="image/*,application/pdf" aria-describedby="file-berkas-prestasi">
+                                        <small id="file-berkas-prestasi" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
+                                    </div>
+                                    <div>
+                                        <label for="berkas_tahfidz">Upload Berkas Tahfidz</label>
+                                        <input type="file" class="form-control-file" id="berkas_tahfidz" name="berkas_tahfidz" accept="image/*" aria-describedby="file-tahfidz">
+                                        <small id="file-tahfidz" class="form-text text-muted">Upload file pdf/jpg/jpeg (Maks 2 Mb)</small>
+                                    </div>
                                     <p>*Harap isi data tahfidz dengan sebenar-benarnya</p>
                                     <center><button type="submit" class="btn btn-primary btn-lg mt-2">Simpan Data Prestasi & Data Tahfidz</button></center>
                                 </div>
