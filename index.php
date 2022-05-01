@@ -9,7 +9,7 @@ require "config/functions.crud.php";
 <head>
 <style>
 body  {
-  background-image: url("assets/img/6098836.jpg");
+  background-image: url("https://drive.google.com/uc?export=view&id=1CZY46kz07FmgJ3fF4DlRUWZo1L6mYtoF");
   background-color: #cccccc;
 }
 </style>
@@ -342,7 +342,7 @@ body  {
             </div>
             <footer class="main-footer">
                 <div class="footer-left">
-                    <font color="white"> Copyright &copy; <?= date('Y') ?> MAN 1 NGANJUK <div class="bullet"></div> Support By <a href="https://man1nganjuk.sch.id/"><font color="white">Politeknik Elektronika Negeri Surabaya & Institut Teknologi Sepuluh November Surabaya</font></a>
+                    <font color="#5F9EA0"> Copyright &copy; <?= date('Y') ?> MAN 1 NGANJUK <div class="bullet"></div> Support By <a href="https://man1nganjuk.sch.id/"><font color="#5F9EA0">Politeknik Elektronika Negeri Surabaya & Institut Teknologi Sepuluh November Surabaya</font></a>
                 </div>
                 <div class="footer-right">
 
