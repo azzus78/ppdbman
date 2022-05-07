@@ -134,7 +134,7 @@ if (isset($_SESSION['id_user'])) {
               <a href="https://www.man1nganjuk.sch.id" target="_blank">PPDB MAN 1 NGANJUK</a>
             </div>
             <div class="sidebar-brand sidebar-brand-sm">
-              <a href="https://www.man1nganjuk.sch.id" target="_blank">CP</a>
+              <a href="https://www.man1nganjuk.sch.id" target="_blank">MENU</a>
             </div>
             <!-- INCLUDE MAIN MENU DI MENU.PHP -->
             <?php include "menu.php" ?>

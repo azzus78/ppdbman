@@ -159,9 +159,11 @@
                                         <?php $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
                                         if ($daftar['jenis']  == $jenis['id_jenis']) { ?>
                                             <span class="badge badge-info">Prestasi</span>
+                                        <?php } else if ($daftar['jenis']  == "TH") { ?>
+                                            <span class="badge badge-danger">Tahfidz </span>
+                                            <!-- <span class="badge badge-danger">Tahfidz </span> -->
                                         <?php } else { ?>
                                             <span class="badge badge-warning">Reguler </span>
-                                            <!-- <span class="badge badge-danger">Tahfidz </span> -->
                                         <?php } ?>
                                     </td>
                                     <td>
