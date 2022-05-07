@@ -72,6 +72,8 @@
                 if (array_key_exists("list", $_GET)) {
                     if ($_GET['list'] == "PR") {
                         $donwload_excel_opt = "mod_daftar/export_excel.php?list=PR";
+                    } else if ($_GET['list'] == "TH") {
+                        $donwload_excel_opt = "mod_daftar/export_excel.php?list=TH";
                     } else {
                         $donwload_excel_opt = "mod_daftar/export_excel.php?list=SB";
                     }
@@ -113,6 +115,8 @@
                             if (array_key_exists("list", $_GET)) {
                                 if ($_GET['list'] == "PR") {
                                     $query = mysqli_query($koneksi, "select * from daftar where jenis='PR'");
+                                } else if ($_GET['list'] == "TH") {
+                                    $query = mysqli_query($koneksi, "select * from daftar where jenis='TH'");
                                 } else {
                                     $query = mysqli_query($koneksi, "select * from daftar where jenis='SB'");
                                 }
@@ -310,6 +314,16 @@
             url = head + "SB";
         } else {
             url += '&list=SB'
+        }
+        window.location.href = url;
+    });
+    $('#listTahfidz').click(function() {
+        var url = window.location.href;
+        if (url.includes("list")) {
+            var head = url.substr(0, url.length - 2);
+            url = head + "TH";
+        } else {
+            url += '&list=TH'
         }
         window.location.href = url;
     });

@@ -8,6 +8,9 @@ if (array_key_exists("list", $_GET)) {
     if ($_GET['list'] == "PR") {
         $query_excel = "select * from daftar where jenis='PR'";
         $excel_file_name = "dataprestasi_pendaftar.xls";
+    } else if ($_GET['list'] == "TH") {
+        $query_excel = "select * from daftar where jenis='TH'";
+        $excel_file_name = "datatahfidz_pendaftar.xls";
     } else {
         $query_excel = "select * from daftar where jenis='SB'";
         $excel_file_name = "datareguler_pendaftar.xls";

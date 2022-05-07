@@ -5,7 +5,8 @@
 <?php 
 $siswa = fetch($koneksi, 'daftar', ['id_daftar' => dekripsi($_GET['id'])]);
 $jenis = fetch($koneksi, 'jenis', ['nama_jenis' => 'PRESTASI']); 
-$prestasi = $siswa['jenis']  == $jenis['id_jenis'];
+$prestasi = $siswa['jenis'] == $jenis['id_jenis'];
+$tahfidz = $siswa['jenis'] == 'TH';
 $jurusan1 = "-";
 $jurusan2 = "-";
 $keterampilan = "-";
@@ -351,7 +352,11 @@ while ($keter=mysqli_fetch_array($query)) {
                             </div>
                         </div>
                         <!-- / -->
-                        <?php if($prestasi) {
+                        <?php 
+                        if ($tahfidz) {
+                            $datapres = fetch($koneksi, 'tahfidz', ["id_daftar" => $siswa['id_daftar']]);
+                        }
+                        if($prestasi) {
                             $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
                         ?>
                         <div class="tab-pane fade" id="prestasi3" role="tabpanel" aria-labelledby="prestasi-tab3">
@@ -506,11 +511,13 @@ while ($keter=mysqli_fetch_array($query)) {
                                             </td>
                                         </tr>
                                         <?php } ?>
+                                        <?php if ($tahfidz) { ?>
                                         <tr>
                                             <td align="center" colspan="2"><i class="fas fa-address-card"></i> <b>Berkas Tahfidz</b>
                                                 <a href="../user/mod_formulir/<?= $datapres['file_tahfidz'] ?>" target="_blank"><button type="button" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button></a>
                                             </td>
                                         </tr>
+                                        <?php } ?>
                                     </tbody>
                                 </table>
                             </div>
