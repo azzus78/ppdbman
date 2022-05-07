@@ -356,7 +356,7 @@ while ($keter=mysqli_fetch_array($query)) {
             <tbody>
             <tr>
                 <td style="width: 150px"><b>Sudah Hafal Berapa Juz</b></td>
-                <td align="left"><?= $datapres['hafal_juz']  ?></td>
+                <td align="left"><?= $datapres['jumlah_juz']  ?></td>
             </tr>
             </tbody>
         </table>
@@ -434,6 +434,6 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-$dompdf->stream("Formulir_".$siswa['nama'].".pdf", array("Attachment" => false));
+$dompdf->stream("Formulir_".$siswa['nama']."_".$siswa['nisn'].".pdf", array("Attachment" => false));
 exit(0);
 ?>
