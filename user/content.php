@@ -1,12 +1,20 @@
 <?php defined('BASEPATH') or die("ip anda sudah tercatat oleh sistem kami") ?>
 <?php
-$prestasiState = fetch($koneksi, 'jenis', ['nama_jenis' => "PRESTASI"]);
+$jenis_data = fetch($koneksi, 'jenis', ['id_jenis' => $jenis]);
 if ($pg == '') {
     include "home.php";
 } elseif ($pg == 'formulir') {
-    include "mod_formulir/formulir.php";
+    if ($jenis_data['status_form']) {
+        include "mod_formulir/formulir.php";
+    } else {
+        include "mod_formulir/block.php";
+    }
 } elseif ($pg == 'prestasi_formulir') {
-    include "mod_formulir/prestasi_formulir.php";
+    if ($jenis_data['status_form']) {
+        include "mod_formulir/prestasi_formulir.php";
+    } else {
+        include "mod_formulir/block.php";
+    }
 } elseif ($pg == 'detail') {
     include "mod_formulir/detail.php";  //Modul Detail Pendaftaran
 } elseif ($pg == 'bayar') {
@@ -18,11 +26,13 @@ if ($pg == '') {
 } elseif ($pg == 'setting') {
     include "mod_setting/setting.php";
 } elseif ($pg == 'tahfidz_formulir') {
-    include "mod_formulir/tahfidz_formulir.php";
+    if ($jenis_data['status_form']) {
+        include "mod_formulir/tahfidz_formulir.php";
+    } else {
+        include "mod_formulir/block.php";
+    }
 } elseif ($pg == 'guide_book') {
     include "mod_pengumuman/guide_book.php";
 } elseif ($pg == 'block') {
     include "mod_formulir/block.php";
 }
-
-

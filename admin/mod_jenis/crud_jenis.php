@@ -8,9 +8,11 @@ if (!isset($_SESSION['id_user'])) {
 }
 if ($pg == 'ubah') {
     $status = (isset($_POST['status'])) ? 1 : 0;
+    $status_form = (isset($_POST['status_form'])) ? 1 : 0;
     $data = [
         'nama_jenis' => $_POST['nama'],
-        'status' => $status
+        'status' => $status,
+        'status_form' => $status_form
     ];
     $id_jenis = $_POST['id_jenis'];
     echo update($koneksi, 'jenis', $data, ['id_jenis' => $id_jenis]);
