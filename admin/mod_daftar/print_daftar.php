@@ -434,6 +434,6 @@ $dompdf = new Dompdf();
 $dompdf->loadHtml($html);
 $dompdf->setPaper('A4', 'portrait');
 $dompdf->render();
-$dompdf->stream("Formulir_".$siswa['nama'].".pdf", array("Attachment" => false));
+$dompdf->stream("Formulir_".$siswa['nama']."_".$siswa['nisn'].".pdf", array("Attachment" => false));
 exit(0);
 ?>
