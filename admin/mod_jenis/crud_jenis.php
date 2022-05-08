@@ -13,7 +13,7 @@ if ($pg == 'ubah') {
         'status' => $status
     ];
     $id_jenis = $_POST['id_jenis'];
-    update($koneksi, 'jenis', $data, ['id_jenis' => $id_jenis]);
+    echo update($koneksi, 'jenis', $data, ['id_jenis' => $id_jenis]);
 }
 if ($pg == 'tambah') {
     $data = [
