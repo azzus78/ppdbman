@@ -352,10 +352,50 @@ while ($keter=mysqli_fetch_array($query)) {
                             </div>
                         </div>
                         <!-- / -->
-                        <?php 
+                        <?php
                         if ($tahfidz) {
                             $datapres = fetch($koneksi, 'tahfidz', ["id_daftar" => $siswa['id_daftar']]);
-                        }
+                        ?>
+                        <div class="tab-pane fade" id="prestasi3" role="tabpanel" aria-labelledby="prestasi-tab3">
+                            <div class="table-responsiv">
+                                <table class="table table-striped table-sm ">
+                                    <tbody>
+                                        <tr>
+                                            <td align="center" colspan="2"><i class="fas fa-crown"></i> <b>Data Prestasi & Tahfidz</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"><b>Sudah Hafal Berapa Juz</b></td>
+                                            <td align="left"><?= $datapres['jumlah_jus'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"><b>Prestasi</b></td>
+                                            <td align="left"><?= $datapres['tipe_prestasi'] ?></td>
+                                        </tr>
+                                        <?php if ($datapres['tipe_prestasi'] == "AKADEMIK") { ?>
+                                        <tr>
+                                            <td align="right"><b>Jenis Prestasi</b></td>
+                                            <td align="left"><?= $datapres['jenis_prestasi'] ?></td>
+                                        </tr>
+                                        <?php } else { ?>
+                                        <tr>
+                                            <td align="right"><b>Nama Prestasi</b></td>
+                                            <td align="left"><?= $datapres['nama_prestasi'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"><b>Peringkat Prestasi</b></td>
+                                            <td align="left"><?= $datapres['peringkat_prestasi'] ?></td>
+                                        </tr>
+                                        <tr>
+                                            <td align="right"><b>Tingkat Prestasi</b></td>
+                                            <td align="left"><?= $datapres['tingkat_prestasi'] ?></td>
+                                        </tr>
+                                        <?php } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <?php } ?>
+                        <?php
                         if($prestasi) {
                             $datapres = fetch($koneksi, 'prestasi', ["id_daftar" => $siswa['id_daftar']]);
                         ?>
@@ -450,10 +490,6 @@ while ($keter=mysqli_fetch_array($query)) {
                                             <?php $totalsmt5 = $datapres['mat5'] + $datapres['bin5'] + $datapres['bing5'] + $datapres['ipa5'] + $datapres['ips5']; ?>
                                             <td align="left"><b><font color="green"><?= $totalsmt5 ?></b></font></td>
                                         </tr> -->
-                                        <tr>
-                                            <td align="right"><b>Sudah Hafal Berapa Juz</b></td>
-                                            <td align="left"><?= $datapres['hafaljus'] ?></td>
-                                        </tr>
                                         <tr>
                                             <td align="right"><b>Prestasi</b></td>
                                             <td align="left"><?= $datapres['tipe_prestasi'] ?></td>
