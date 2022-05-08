@@ -139,13 +139,19 @@ if (!isset($_SESSION['id_user'])) {
                     $keterampilan = $keter['nama_keterampilan'];
                 }
             }
-            $datapres = fetch($koneksi, 'prestasi', ['id_daftar' => $daftar['id_daftar']])
+            if ($daftar['jenis'] == "PR") {
+                $datapres = fetch($koneksi, 'prestasi', ['id_daftar' => $daftar['id_daftar']]);
+            } else if ($daftar['jenis'] == "TH") {
+                $datapres = fetch($koneksi, 'tahfidz', ['id_daftar' => $daftar['id_daftar']]);
+            }
         ?>
             <tr>
             <td><?= $no; ?></td>
                 <td><?= $daftar['no_daftar'] ?></td>
                 <?php if ($daftar['jenis'] == "PR") {?>
                 <td>Prestasi</td>
+                <?php } else if ($daftar['jenis'] == "TH") {?>
+                <td>Tahfidz</td>
                 <?php } else {?>
                 <td>Reguler</td>
                 <?php }?>
@@ -212,7 +218,7 @@ if (!isset($_SESSION['id_user'])) {
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt4 ?></font></b></td>
                 <?php $totalsmt5 = $datapres['mat5'] + $datapres['bin5'] + $datapres['bing5'] + $datapres['ipa5'] + $datapres['ips5']; ?>
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt5 ?></font></b></td> -->
-                <td><?= $datapres['hafaljus'] ?></td>
+                <td><?= $datapres['jumlah_jus'] ?></td>
                 <td><?= $datapres['tipe_prestasi'] ?></td>
                 <td><?= $datapres['jenis_prestasi'] ?></td>
                 <td><?= $datapres['nama_prestasi'] ?></td>

@@ -350,17 +350,6 @@ while ($keter=mysqli_fetch_array($query)) {
             </tbody>
         </table>
         <?php } ?>
-        <?php if ($datapres['tipe_prestasi'] <> null) { ?>
-        <h4>Tahfidz</h4>
-        <table style="font-size: 12px" class="table table-striped table-bordered table-sm">
-            <tbody>
-            <tr>
-                <td style="width: 150px"><b>Sudah Hafal Berapa Juz</b></td>
-                <td align="left"><?= $datapres['hafal_juz']  ?></td>
-            </tr>
-            </tbody>
-        </table>
-        <?php } ?>
         <?php } ?>
         <?php if($siswa['jenis'] == "TH") {
             $datapres = fetch($koneksi, 'tahfidz', ["id_daftar" => $siswa['id_daftar']]);
