@@ -181,7 +181,7 @@
                                                                 </label>
                                                                 <div class="control-label">Status formulir pendaftaran</div>
                                                                 <label class="custom-switch mt-2">
-                                                                    <input type="checkbox" name="status_form" class="custom-switch-input" value='1' <?php if ($jenis['status'] == 1) {
+                                                                    <input type="checkbox" name="status_form" class="custom-switch-input" value='1' <?php if ($jenis['status_form'] == 1) {
                                                                                                                                                     echo "checked";
                                                                                                                                                 } ?>>
                                                                     <span class="custom-switch-indicator"></span>

@@ -93,7 +93,7 @@ while ($keter=mysqli_fetch_array($query)) {
                         <li class="nav-item">
                             <a class="nav-link" id="pip-tab3" data-toggle="tab" href="#pip3" role="tab" aria-controls="pip" aria-selected="false"><i class="fas fa-edit    "></i> Informasi KKS/PKH/PKS/PIP/SKM</a>
                         </li>
-                        <?php if ($prestasi) { ?>
+                        <?php if ($prestasi || $tahfidz) { ?>
                         <li class="nav-item">
                             <a class="nav-link" id="prestasi-tab3" data-toggle="tab" href="#prestasi3" role="tab" aria-controls="prestasi" aria-selected="false"><i class="fas fa-crown    "></i> Data Prestasi & Tahfidz</a>
                         </li>
@@ -540,7 +540,7 @@ while ($keter=mysqli_fetch_array($query)) {
                                             </td>
                                         </tr>
                                         <!-- / -->
-                                        <?php if ($prestasi) { ?>
+                                        <?php if ($prestasi || $tahfidz) { ?>
                                         <tr>
                                             <td align="center" colspan="2"><i class="fas fa-address-card"></i> <b>Berkas Prestasi</b>
                                                 <a href="../user/mod_formulir/<?= $datapres['file_prestasi'] ?>" target="_blank"><button type="button" class="btn btn-success btn-sm"><i class="fas fa-eye"></i></button></a>

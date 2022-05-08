@@ -19,7 +19,8 @@ if ($pg == 'tambah') {
     $data = [
         'id_jenis'     => $_POST['id_jenis'],
         'nama_jenis'   => $_POST['nama'],
-        'status'         => 1
+        'status'         => 1,
+        'status_form'         => 1
     ];
     $exec = insert($koneksi, 'jenis', $data);
     echo $exec;
