@@ -218,11 +218,11 @@
                                                                         <span class="custom-switch-description">Pindahkan Prestasi</span>
                                                                     </label>
                                                                     <?php } ?>
-                                                                    <label class="custom-switch">
+                                                                    <!-- <label class="custom-switch">
                                                                         <input type="radio" name="status" value="5" class="custom-switch-input">
                                                                         <span class="custom-switch-indicator"></span>
                                                                         <span class="custom-switch-description">Pindahkan Tahfidz</span>
-                                                                    </label>
+                                                                    </label> -->
                                                                 </div>
                                                             </div>
                                                         </div>
