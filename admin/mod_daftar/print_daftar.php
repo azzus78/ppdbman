@@ -193,8 +193,8 @@ while ($keter=mysqli_fetch_array($query)) {
                 </tr>
                 <tr>
                     <td><b>Tgl & Tahun Lahir</b></td>
-                    <td align="left"><?= $siswa['tgl_lahir_ayah'] ?></td>
-                    <td align="left"><?= $siswa['tgl_lahir_ibu'] ?></td>
+                    <td align="left"><?php echo date('d-m-Y', strtotime($siswa['tgl_lahir_ayah'])); ?></td>
+                    <td align="left"><?php echo date('d-m-Y', strtotime($siswa['tgl_lahir_ibu'])); ?></td>
                     <td align="left"></td>
                 <tr>
                     <td><b>Pendidikan</b></td>
