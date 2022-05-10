@@ -4,13 +4,17 @@ require "../../config/function.php";
 require "../../config/functions.crud.php";
 // Skrip berikut ini adalah skrip yang bertugas untuk meng-export data tadi ke excell
 
+$prestasi = false;
+$tahfidz = false;
 if (array_key_exists("list", $_GET)) {
     if ($_GET['list'] == "PR") {
         $query_excel = "select * from daftar where jenis='PR'";
         $excel_file_name = "dataprestasi_pendaftar.xls";
+        $prestasi = true;
     } else if ($_GET['list'] == "TH") {
         $query_excel = "select * from daftar where jenis='TH'";
         $excel_file_name = "datatahfidz_pendaftar.xls";
+        $tahfidz = true;
     } else {
         $query_excel = "select * from daftar where jenis='SB'";
         $excel_file_name = "datareguler_pendaftar.xls";
@@ -97,14 +101,17 @@ if (!isset($_SESSION['id_user'])) {
             <!-- <th>Total Nilai Semester 3</th>
             <th>Total Nilai Semester 4</th>
             <th>Total Nilai Semester 5</th> -->
+            <?php if ($tahfidz) { ?>
             <th>Sudah Hafal Berapa Juz</th>
+            <?php } ?>
+            <?php if ($prestasi || $tahfidz) { ?>
             <th>Prestasi</th>
             <th>Jenis Prestasi</th>
             <th>Nama Prestasi</th>
             <th>Peringkat Prestasi</th>
             <th>Tingkat Prestasi</th>
+            <?php } ?>
             <th>Status Pendaftaran</th>
-
         </tr>
     </thead>
     <tbody>
@@ -218,12 +225,16 @@ if (!isset($_SESSION['id_user'])) {
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt4 ?></font></b></td>
                 <?php $totalsmt5 = $datapres['mat5'] + $datapres['bin5'] + $datapres['bing5'] + $datapres['ipa5'] + $datapres['ips5']; ?>
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt5 ?></font></b></td> -->
+                <?php if ($tahfidz) { ?>
                 <td><?= $datapres['jumlah_jus'] ?></td>
+                <?php } ?>
+                <?php if ($prestasi || $tahfidz) { ?>
                 <td><?= $datapres['tipe_prestasi'] ?></td>
                 <td><?= $datapres['jenis_prestasi'] ?></td>
                 <td><?= $datapres['nama_prestasi'] ?></td>
                 <td><?= $datapres['peringkat_prestasi'] ?></td>
                 <td><?= $datapres['tingkat_prestasi'] ?></td>
+                <?php } ?>
                 <td>
                     <?php if ($daftar['status'] == 1) { ?>
                         <span class="badge badge-success">diterima</span>
