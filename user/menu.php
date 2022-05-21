@@ -9,9 +9,10 @@
     <?php } else { ?>
   		<li><a class="nav-link" href="?pg=formulir"><i class="far fa-address-book"></i> <span>Formulir</span></a></li>
     <?php } ?>
-    <?php if (!$testppdb) { ?>
+    <li><a class="nav-link" href="?pg=pengumuman"><i class="fas fa-chalkboard-teacher"></i> <span>Info Tes PPDB</span></a></li>
+    <!-- <?php if (!$testppdb) { ?>
         <li><a class="nav-link" href="?pg=pengumuman"><i class="fas fa-chalkboard-teacher"></i> <span>Info Tes PPDB</span></a></li>
-    <?php } ?>
+    <?php } ?> -->
   	<?php if ($verified) { ?>
      <li><a class="nav-link" href="?pg=bayar"><i class="far fa-credit-card"></i> <span>Pembayaran</span></a></li> 
     <?php } ?>
