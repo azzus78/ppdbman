@@ -125,6 +125,7 @@
                                 <th>Kode jenis</th>
                                 <th>Nama jenis</th>
                                 <th>status</th>
+                                <th>status formulir</th>
                                 <th>Action</th>
                             </tr>
                         </thead>
@@ -144,6 +145,13 @@
                                             <span class="badge badge-success">Aktif</span>
                                         <?php } else { ?>
                                             <span class="badge badge-danger">Non Aktif</span>
+                                        <?php } ?>
+                                    </td>
+                                    <td>
+                                        <?php if ($jenis['status_form'] == 1) { ?>
+                                            <span class="badge badge-info">Aktif</span>
+                                        <?php } else { ?>
+                                            <span class="badge badge-warning">Tutup</span>
                                         <?php } ?>
                                     </td>
                                     <td>
