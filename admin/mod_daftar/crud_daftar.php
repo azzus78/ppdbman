@@ -58,6 +58,13 @@ if ($pg == 'hapusSemua') {
     if (!$exec) {
         return "NO";
     }
+    $command = 'DELETE FROM tahfidz WHERE tahfidz.id_daftar IN (
+        SELECT daftar.id_daftar FROM daftar
+    )';
+    $exec = mysqli_query($koneksi, $command);
+    if (!$exec) {
+        return "NO";
+    }
     delete($koneksi, 'daftar');
 }
 //membatalkan proses daftar ulang

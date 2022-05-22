@@ -6,6 +6,7 @@ require "../../config/functions.crud.php";
 
 $prestasi = false;
 $tahfidz = false;
+$all = false;
 if (array_key_exists("list", $_GET)) {
     if ($_GET['list'] == "PR") {
         $query_excel = "select * from daftar where jenis='PR'";
@@ -22,6 +23,7 @@ if (array_key_exists("list", $_GET)) {
 } else {
     $query_excel = "select * from daftar";
     $excel_file_name = "datasemua_pendaftar.xls";
+    $all = true;
 }
 
 header("Content-type: application/vnd-ms-excel");
@@ -101,15 +103,15 @@ if (!isset($_SESSION['id_user'])) {
             <!-- <th>Total Nilai Semester 3</th>
             <th>Total Nilai Semester 4</th>
             <th>Total Nilai Semester 5</th> -->
-            <?php if ($tahfidz) { ?>
-            <th>Sudah Hafal Berapa Juz</th>
+            <?php if ($all || $tahfidz) { ?>
+                <th>Sudah Hafal Berapa Juz</th>
             <?php } ?>
-            <?php if ($prestasi || $tahfidz) { ?>
-            <th>Prestasi</th>
-            <th>Jenis Prestasi</th>
-            <th>Nama Prestasi</th>
-            <th>Peringkat Prestasi</th>
-            <th>Tingkat Prestasi</th>
+            <?php if ($all || $tahfidz || $prestasi) { ?>
+                <th>Prestasi</th>
+                <th>Jenis Prestasi</th>
+                <th>Nama Prestasi</th>
+                <th>Peringkat Prestasi</th>
+                <th>Tingkat Prestasi</th>
             <?php } ?>
             <th>Status Pendaftaran</th>
         </tr>
@@ -120,7 +122,10 @@ if (!isset($_SESSION['id_user'])) {
         $no = 0;
         $query2=mysqli_query($koneksi, 'select * from jurusan');
         while ($daftar = mysqli_fetch_array($query1)) {
+            $prestasi = false;
+            $tahfidz = false;
             $no++;
+            $jurusan1 = '';
             if ($daftar['jurusan1'] == "1IPA") {
                 $jurusan1 = "MIPA";
             } else if ($daftar['jurusan1'] == "2IPS") {
@@ -131,6 +136,7 @@ if (!isset($_SESSION['id_user'])) {
                 $jurusan1 = "KEAGAMAAN";
             }
 
+            $jurusan2 = '';
             if ($daftar['jurusan2'] == "1IPA") {
                 $jurusan2 = "MIPA";
             } else if ($daftar['jurusan2'] == "2IPS") {
@@ -141,6 +147,7 @@ if (!isset($_SESSION['id_user'])) {
                 $jurusan2 = "KEAGAMAAN";
             }
             $query3=mysqli_query($koneksi, 'select * from keterampilan');
+            $keterampilan = '';
             while ($keter=mysqli_fetch_array($query3)) {
                 if ($daftar['keterampilan'] == $keter['id_keterampilan']) {
                     $keterampilan = $keter['nama_keterampilan'];
@@ -148,8 +155,10 @@ if (!isset($_SESSION['id_user'])) {
             }
             if ($daftar['jenis'] == "PR") {
                 $datapres = fetch($koneksi, 'prestasi', ['id_daftar' => $daftar['id_daftar']]);
+                $prestasi = true;
             } else if ($daftar['jenis'] == "TH") {
                 $datapres = fetch($koneksi, 'tahfidz', ['id_daftar' => $daftar['id_daftar']]);
+                $tahfidz = true;
             }
         ?>
             <tr>
@@ -227,6 +236,8 @@ if (!isset($_SESSION['id_user'])) {
                 <td class="str" align="center"><b><font color="green"><?= $totalsmt5 ?></font></b></td> -->
                 <?php if ($tahfidz) { ?>
                 <td><?= $datapres['jumlah_jus'] ?></td>
+                <?php } else if ($all) { ?>
+                <td></td>
                 <?php } ?>
                 <?php if ($prestasi || $tahfidz) { ?>
                 <td><?= $datapres['tipe_prestasi'] ?></td>
@@ -234,6 +245,12 @@ if (!isset($_SESSION['id_user'])) {
                 <td><?= $datapres['nama_prestasi'] ?></td>
                 <td><?= $datapres['peringkat_prestasi'] ?></td>
                 <td><?= $datapres['tingkat_prestasi'] ?></td>
+                <?php } else if ($all) { ?>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
                 <?php } ?>
                 <td>
                     <?php if ($daftar['status'] == 1) { ?>
