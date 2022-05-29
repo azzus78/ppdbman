@@ -39,9 +39,9 @@ if ($pg == 'simpandatadiri') {
                 $ext = end($ext);
                 if (in_array($ext, $ektensi)) {
                     $dest = 'ijazah_akta/ia_' . $_POST['nisn'] .time(). '.' . $ext;
-                    if ($siswa['file_ijazah'] <> null) {
-                        unlink($siswa['file_ijazah']);
-                    }
+                    // if ($siswa['file_ijazah'] <> null) {
+                    //     unlink($siswa['file_ijazah']);
+                    // }
                     $upload = move_uploaded_file($temp,  $dest);
                     if ($upload) {
                     $data = [
@@ -182,18 +182,18 @@ if ($pg == 'simpanortu') {
 
         if (in_array($extkk, $ektensi) && $kartu_in_arr) {
             $destkk = 'berkas_kk/kk_' . $siswa['nisn'] .time(). '.' . $extkk;
-            if ($siswa['file_kk'] <> null) {
-                unlink($siswa['file_kk']);
-            }
+            // if ($siswa['file_kk'] <> null) {
+            //     unlink($siswa['file_kk']);
+            // }
             $uploadkk = move_uploaded_file($tempkk,  $destkk);
             
             $upload = true;
 
             if ($upload_kartu) {
                 $dest = 'berkas_kartu/kartu_' . $siswa['nisn'] .time(). '.' . $ext;
-                if ($siswa['file_kartu'] <> null) {
-                    unlink($siswa['file_kartu']);
-                }
+                // if ($siswa['file_kartu'] <> null) {
+                //     unlink($siswa['file_kartu']);
+                // }
                 $upload = move_uploaded_file($temp,  $dest);
             }
             
@@ -261,9 +261,9 @@ if ($pg == 'simpanortu') {
             $ext = end($ext);
             if (in_array($ext, $ektensi)) {
                 $dest = 'berkas_kartu/kartu_' . $siswa['nisn'] .time(). '.' . $ext;
-                if ($siswa['file_kartu'] <> null) {
-                    unlink($siswa['file_kartu']);
-                }
+                // if ($siswa['file_kartu'] <> null) {
+                //     unlink($siswa['file_kartu']);
+                // }
                 $upload = move_uploaded_file($temp,  $dest);
                 if ($upload) {
                   $data = [
@@ -330,9 +330,9 @@ if ($pg == 'simpaninfokartu') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'berkas_kartu/kartu_' . $siswa['nisn'] .time(). '.' . $ext;
-            if ($siswa['file_kartu'] <> null) {
-                unlink($siswa['file_kartu']);
-            }
+            // if ($siswa['file_kartu'] <> null) {
+            //     unlink($siswa['file_kartu']);
+            // }
             $upload = move_uploaded_file($temp,  $dest);
             if ($upload) {
               $data = [
@@ -373,9 +373,9 @@ if ($pg == 'gantifoto') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'foto_siswa/foto_' . $siswa['nisn'] . time().'.' . $ext;
-            if ($siswa['foto'] <> null) {
-                unlink($siswa['foto']);
-            }
+            // if ($siswa['foto'] <> null) {
+            //     unlink($siswa['foto']);
+            // }
             $upload = move_uploaded_file($temp,  $dest);
             if ($upload) {
               $data = [
@@ -412,9 +412,9 @@ if ($pg == 'simpanprestasi') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'berkas_prestasi/pr_' . $siswa['nisn'] .time(). '.' . $ext;
-            if ($prestasi['file_prestasi'] <> null) {
-                unlink($prestasi['file_prestasi']);
-            }
+            // if ($prestasi['file_prestasi'] <> null) {
+            //     unlink($prestasi['file_prestasi']);
+            // }
             $upload = move_uploaded_file($temp,  $dest);
             if ($upload) {
               $data = [
