@@ -33,7 +33,7 @@
   <style>
   body  {
     /* background-image: url("../assets/background-batik-png-hd-1.png"); */
-    background-image: url("https://drive.google.com/uc?export=view&id=1W9jwnPBxWUtv3Oy9lWav91VOjHb3h-Az");
+    background-image: url("../assets/img/background-batik-png-hd-1.png");
     background-color: #cccccc;
   }
 </style>
